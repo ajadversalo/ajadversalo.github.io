@@ -17,7 +17,7 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-import { aboutContent, productList } from '../src/data/data';
+import { aboutContent, productList, emailPattern } from '../src/data/data';
 
 import About from './Pages/About';
 import Projects from './Pages/Projects';
@@ -80,6 +80,13 @@ function App() {
   
   const { classes } = useStyles();
   const [openDrawer, setOpenDrawer] = useState(true);
+  
+  const [/*open*/, setOpen] = useState(false);
+  const [/*popupMsg*/, setPopupMsg] = useState('');
+  const [/*popupMsgType*/, setPopupMsgType] = useState('error');
+  const [/*openPopup*/, setOpenPopup] = useState(false);
+
+
   //const [page, setPage] = useState<{page: null | string}>({ page: '' });
   const [page, setPage] = useState({});
 
@@ -147,7 +154,14 @@ function App() {
                     </div>
                     { page === 'about' && <About content={aboutContent}/>}
                     { page === 'projects' && <Projects productList={productList}/>}
-                    { page === 'contact' && <Contact content={aboutContent}/>}
+                    { page === 'contact' && 
+                      <Contact 
+                        setOpenPopup={setOpenPopup}
+                        setPopupMsg={setPopupMsg}
+                        setPopupMsgType={setPopupMsgType}
+                        setOpen={setOpen}
+                      />
+                    }
                 </div>                
           </SwipeableDrawer>
     </div>

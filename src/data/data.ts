@@ -36,3 +36,15 @@ export const productList = [
         image: 'patientdashboard.jpg'
     }
 ];
+
+export const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // eslint-disable-line
+
+            /* -------------------------------------
+                Service Id: service_0cl4yjf
+                Template Id: template_c2ne7jm
+                 Public key: ajonPi_KH7jk3zPCW
+            ------------------------------------- */
+
+export const serviceId = 'service_0cl4yjf';
+export const templateId = 'template_c2ne7jm';
+export const publicKey = 'ajonPi_KH7jk3zPCW';
