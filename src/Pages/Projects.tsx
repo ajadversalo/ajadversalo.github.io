@@ -11,8 +11,7 @@ const useStyles = makeStyles()(() => ({
         color: '#587792'
     },
     subText:{
-        color: '#000',
-        paddingBottom: '1rem', 
+        color: '#000',        
         paddingTop: '0.3rem'
     },
     subTextValue:{
@@ -33,6 +32,12 @@ const useStyles = makeStyles()(() => ({
         width: '11rem',
         color: '#000',
         paddingRight: '2rem'
+    },
+    divider: {         
+        backgroundColor: '#000', 
+        height: '1px',         
+        marginTop: '-0.8rem',
+        width: '100%'
     }
 }));
 
@@ -66,19 +71,18 @@ function Projects(props: ProjectsProps) {
 
     return (
         <div className={classes.root}>                                                       
-            <img src={`./genxys-logo.png`} alt='genxys-logo' style={{width: '7rem', paddingTop: '1rem', paddingBottom: '0.5rem'}}/>
-            <div style={{width: '100%', height: '1px', backgroundColor: '#000'}}></div>
-            <div className={classes.subText} style={{color :'#000'}}>Technologies used: <span className={classes.subTextValue}>ReactJS, Redux, Material-UI, C#, .Net, Entity Framework, MS SQL, Azure DevOps, Canada Post API, SendGrid, Visual Studio</span></div>                                    
-            <div style={{paddingTop: '1rem'}}>
-                {productList.map((p: ProductCardProps) => {
-                    return (
-                        <ProductCard 
-                            key={p.title}
-                            title={p.title} 
-                            description={p.description} 
-                        />)
-                })}
-            </div>            
+            <h2 className={classes.title}>Projects</h2>
+            <div className={classes.divider}></div> 
+            <img src={`./genxys-logo.png`} alt='genxys-logo' style={{width: '7rem', paddingTop: '1.5rem', paddingBottom: '0.5rem'}}/>            
+            <div className={classes.subText} style={{color :'#000'}}>Technologies used: <span className={classes.subTextValue}>ReactJS, Redux, Material-UI, C#, .Net, Entity Framework, MS SQL, Azure DevOps, Canada Post API, SendGrid, Visual Studio</span></div>                                                
+            {productList.map((p: ProductCardProps) => {
+                return (
+                    <ProductCard 
+                        key={p.title}
+                        title={p.title} 
+                        description={p.description} 
+                    />)
+            })}            
         </div>
     );
 }

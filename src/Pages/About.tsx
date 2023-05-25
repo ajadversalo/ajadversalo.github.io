@@ -7,8 +7,15 @@ const useStyles = makeStyles()(() => ({
         color: '#587792' 
     },
     title: {
+        color: '#587792' 
     },
     contentText: {
+    },
+    divider: {         
+        backgroundColor: '#000', 
+        height: '1px',         
+        marginTop: '-0.8rem',
+        width: '100%'
     }
 }));
 
@@ -24,6 +31,7 @@ function About(props: AboutProps) {
         <div className={classes.root} style={{height: '100%'}}>            
             <div style={{padding: '0 1rem'}}>
                 <h2 className={classes.title}>About Me</h2>
+                <div className={classes.divider}></div>   
                 <div className={classes.contentText}>
                     {content.map((c, index) => {
                         return(<p key={`paragraph-${index}`}>{c}</p>)

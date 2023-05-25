@@ -62,6 +62,12 @@ const useStyles = makeStyles()(() => ({
     },
     subText: {
         color: 'rgba(0, 0, 0, 0.6)'
+    },
+    divider: {         
+        backgroundColor: '#000', 
+        height: '1px',         
+        marginTop: '-0.8rem',
+        width: '100%'
     }
 }));
 
@@ -148,6 +154,7 @@ function Contact(props: ContactProps) {
     return(
         <div style={{margin: '1rem', padding: '0 0.5rem'}}>          
             <h2 className={classes.title}>Contact Me</h2>
+            <div className={classes.divider}></div> 
             <div className={classes.subText}>
                 <p>{contactSubText}</p>
             </div>            

@@ -19,6 +19,7 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 import Contact from './Pages//Contact';
 import Resume from './Pages/Resume';
+import Skills from './Pages/Skills';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
 
@@ -236,6 +237,7 @@ function App() {
             <div>
                 <div className={isSm ? classes.buttonRootNarrow : classes.buttonRoot}>
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('about')}}>About</div>
+                    <div className={classes.button} onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('contact')}}>Contact</div>
                 </div>
@@ -295,6 +297,7 @@ function App() {
                         }
                     </div>
                     { page === 'about' && <About content={aboutContent}/> }
+                    { page === 'skills' && <Skills /> }
                     { page === 'projects' && <Projects productList={productList}/> }
                     { page === 'contact' && 
                         <Contact                             
