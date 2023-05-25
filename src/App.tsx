@@ -29,10 +29,6 @@ const useStyles = makeStyles()(() => ({
         textAlign: 'center',
         minWidth: '18rem'
     },
-    // subTitle: {
-    //     marginLeft: '70px',
-    //     fontSize: '3rem'
-    // },
     headingRoot: {
         color: '#000',
         maxWidth: '40rem',
