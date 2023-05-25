@@ -1,25 +1,23 @@
 import React from 'react';
 import { makeStyles } from 'tss-react/mui';
-import Card from '@mui/material/Card';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles()(() => ({
     root: {
-        padding: '0 0.5rem 0 0.5rem',
+        padding: '0 2rem'        
     },
     title:{
-        color: '#BB4430',
-        paddingLeft: '1.5rem', 
-        marginBottom: 0
+        color: '#587792'
     },
-    subTitle:{
-        color: '#587792',
-        fontSize: '0.8rem', 
-        paddingLeft: '0.5rem', 
-        paddingBottom: '1rem'
+    subText:{
+        color: '#000',
+        paddingBottom: '1rem', 
+        paddingTop: '0.3rem'
+    },
+    subTextValue:{
+        color: 'rgba(0, 0, 0, 0.6)',
+        fontSize: '0.8rem'        
     },
     contentText: {
         color: '#587792'
@@ -31,22 +29,15 @@ const useStyles = makeStyles()(() => ({
     icon: {
         fill: '#FFF'
     },
-    accordionRoot: {
-        backgroundColor: 'transparent', 
-        boxShadow: 'none'
-    },
-    accordionTitle: {
-        paddingLeft: '0.5rem',
-        color: '#587792'
-    },
-    accordionSummary:{
-        borderBottom: '1px solid lightgrey'
+    productTitle: {
+        width: '11rem',
+        color: '#000',
+        paddingRight: '2rem'
     }
 }));
 
 type ProductCardProps = {
     title: string,
-    image: string,
     description: string
 }
 
@@ -56,24 +47,17 @@ type ProjectsProps = {
 
 function Projects(props: ProjectsProps) {
     const { productList } = props;
-    
+    const theme = useTheme();
+    const isSm = useMediaQuery(theme.breakpoints.down('sm'));
     const { classes } = useStyles();
     
-    const pageTitle = 'Projects';
-    const genXysTitle = 'GenXys Applications';
-    const personalTitle = 'Personal';
-    const subTitle = 'Together with 3 other developers, we\'ve built several web applications for GenXys utilizing ReactJS, C#, .Net Core, MS SQL and Azure.';
-
     const ProductCard = (props: ProductCardProps) => {            
         return (
-            <div style={{display: 'flex', flexDirection: 'row'}}>
-                <div style={{minWidth: '7rem', maxWidth: '7rem'}}>
-                    <Card className={classes.cardRoot}>
-                        <div className={classes.contentText} style={{textAlign: 'center', paddingBottom: '0.2rem'}}>{props.title}</div>
-                        <img src={`./productImages/${props.image}`} style={{maxWidth: '100%'}} alt={`${props.image}`}></img>
-                    </Card>
+            <div style={{display: 'flex', flexDirection: isSm ? 'column' : 'row', paddingTop: '1rem'}}>
+                <div className={classes.productTitle} style={{textAlign: isSm ? 'left' : 'right'}}>
+                    {props.title}
                 </div>
-                <div className={classes.contentText} style={{fontSize: '0.8rem', minWidth: '10rem', maxWidth: '30rem', paddingTop: '0.5rem'}}>
+                <div className={classes.contentText} style={{fontSize: '0.8rem', width: '100%'}}>
                     {props.description}
                 </div>
             </div>
@@ -81,41 +65,20 @@ function Projects(props: ProjectsProps) {
     }
 
     return (
-        <div className={classes.root}>                                           
-            <h2 className={classes.title}>{pageTitle}</h2>                
-            <Accordion className={classes.accordionRoot} defaultExpanded={true}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon className={classes.icon}/>}
-                    aria-controls="panel-genxys-content"
-                    id="panel-genxys-header"
-                    className={classes.accordionSummary}
-                >
-                    <div className={classes.accordionTitle}>{genXysTitle}</div>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <div className={classes.subTitle}>{subTitle}</div>
-                    {productList.map((p: ProductCardProps) => {
-                        return (
-                            <ProductCard 
-                                title={p.title} 
-                                description={p.description} 
-                                image={p.image}
-                            />)
-                    })}
-                </AccordionDetails>
-            </Accordion>
-            <Accordion className={classes.accordionRoot}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon className={classes.icon}/>}
-                    aria-controls="panel-personal-content"
-                    id="panel-personal-header"
-                    className={classes.accordionSummary}
-                >
-                    <div className={classes.accordionTitle}>{personalTitle}</div>
-                </AccordionSummary>
-                <AccordionDetails>                
-                </AccordionDetails>
-            </Accordion>        
+        <div className={classes.root}>                                                       
+            <img src={`./genxys-logo.png`} alt='genxys-logo' style={{width: '7rem', paddingTop: '1rem', paddingBottom: '0.5rem'}}/>
+            <div style={{width: '100%', height: '1px', backgroundColor: '#000'}}></div>
+            <div className={classes.subText} style={{color :'#000'}}>Technologies used: <span className={classes.subTextValue}>ReactJS, Redux, Material-UI, C#, .Net, Entity Framework, MS SQL, Azure DevOps, Canada Post API, SendGrid, Visual Studio</span></div>                                    
+            <div style={{paddingTop: '1rem'}}>
+                {productList.map((p: ProductCardProps) => {
+                    return (
+                        <ProductCard 
+                            key={p.title}
+                            title={p.title} 
+                            description={p.description} 
+                        />)
+                })}
+            </div>            
         </div>
     );
 }

@@ -2,14 +2,11 @@ import React, { useState, useRef, useCallback } from 'react';
 
 import { makeStyles } from 'tss-react/mui';
 import Button from '@mui/material/Button';
-import EmailIcon from '@mui/icons-material/Email';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 
 import emailjs from 'emailjs-com';
 
-import { emailPattern, serviceId, templateId, publicKey } from '../data/data';
+import { emailPattern, serviceId, templateId, publicKey, contactSubText } from '../data/data';
 
 const useStyles = makeStyles()(() => ({
     root: {
@@ -48,7 +45,11 @@ const useStyles = makeStyles()(() => ({
         color: '#587792'
     },
     input :{
-        borderRadius: 0
+        borderRadius: 0,
+        fontFamily: 'Wix MadeFor Display',
+    },
+    inputLabel: {
+        fontFamily: 'Wix MadeFor Display',
     },
     textBox: {
         width: '100%',
@@ -57,19 +58,21 @@ const useStyles = makeStyles()(() => ({
         borderRadius: 0
     },           
     title:{
-        color: '#BB4430'
+        color: '#587792'
+    },
+    subText: {
+        color: 'rgba(0, 0, 0, 0.6)'
     }
 }));
 
 type ContactProps = {
     setOpen: Function,
-    setPopupMsgType: Function,
     setPopupMsg: Function,
     setOpenPopup: Function
 }
 
 function Contact(props: ContactProps) {
-    const { setOpen, setPopupMsgType, setPopupMsg, setOpenPopup } = props;
+    const { setOpen, setPopupMsg, setOpenPopup } = props;
     const { classes } = useStyles();
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -111,7 +114,6 @@ function Contact(props: ContactProps) {
         }
 
         if(popupMsgType && popupMsg){
-            setPopupMsgType(popupMsgType);
             setPopupMsg(popupMsg);
             setOpenPopup(true);
         }
@@ -123,22 +125,20 @@ function Contact(props: ContactProps) {
             }
         }
                 
-    }, [fromName, fromEmail, message, setPopupMsgType, setPopupMsg, setOpenPopup]);
+    }, [fromName, fromEmail, message, setPopupMsg, setOpenPopup]);
 
     const handleSendEmail = (event: React.FormEvent) => {
-        if(event){
+        if(event){            
+            event.preventDefault();
             emailjs.sendForm(serviceId, templateId, (formRef?.current) ? formRef?.current : '', publicKey)
-            .then((result: any) => {
-                console.log(result.text);
+            .then((result: any) => {                
                 if(result.text){
-                    setPopupMsgType('success');
                     setPopupMsg('Message successfully sent!');
                     setOpenPopup(true);
                     setOpen(false);
                 }
             }, (error: any) => {
                 console.log(error.text);
-                setPopupMsgType('error');
                 setPopupMsg(error.text);
                 setOpenPopup(true);
             });
@@ -146,72 +146,73 @@ function Contact(props: ContactProps) {
     }
 
     return(
-        <div>
-            <div style={{margin: '1rem', padding: '0 0.5rem'}}>          
-                <h2 className={classes.title}>Contact Me</h2>
-                <div className={classes.contactInfoItem}>
-                    <LocalPhoneIcon/>
-                    <Typography className={classes.contactInfoItemValue}>(604) 358-2787</Typography>
-                </div>
-                <div className={classes.contactInfoItem}>
-                    <EmailIcon/>
-                    <Typography className={classes.contactInfoItemValue}>ajadvers@gmail.com</Typography>
-                </div>            
-                <div style={{paddingTop: '1.5rem'}}>
-                    <TextField
-                        name='from-name'
-                        label="Your Name" 
-                        required
-                        className={classes.textBox}
-                        value={fromName}
-                        onChange={handleInputChange}
-                        InputProps={{
-                            className: classes.input,
-                        }}
-                    />
-                    <TextField
-                        name='from-email'
-                        label="Your Email" 
-                        required
-                        value={fromEmail} 
-                        className={classes.textBox}
-                        onChange={handleInputChange}
-                        InputProps={{
-                            className: classes.input,
-                        }}
-                    />
-                    <TextField
-                        name='message' 
-                        label="Your Message" 
-                        required 
-                        className={classes.textBox}
-                        multiline
-                        maxRows={4}
-                        InputProps={{
-                            className: classes.input,
-                            style: {
-                                height: "5rem",
-                            },
-                        }}
-                        value={message}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className={classes.buttonSendRoot}>
-                    <Button 
-                        onClick={handleButtonSend}
-                        className={classes.button}>
-                        Send
-                    </Button>
-                </div>
-                {/* Hidden. Required by emailjs, values are mapped to state. */}
-                <form ref={formRef} onSubmit={handleSendEmail} style={{visibility: 'hidden'}}>
-                    <div><input type='text' name='from_name' onChange={()=>{}} value={fromName}/></div>
-                    <div><input type='text' name='from_email' onChange={()=>{}} value={fromEmail}/></div>
-                    <div><input type='text' name='message' onChange={()=>{}} value={message}/></div>
-                    <div><input id='button_send' type='submit' value='Send'/></div>                                                    
-                </form>                
+        <div style={{margin: '1rem', padding: '0 0.5rem'}}>          
+            <h2 className={classes.title}>Contact Me</h2>
+            <div className={classes.subText}>
+                <p>{contactSubText}</p>
+            </div>            
+            <div style={{paddingTop: '0.5rem'}}>
+                <TextField
+                    name='from-name'
+                    label="Your Name" 
+                    required
+                    className={classes.textBox}
+                    value={fromName}
+                    onChange={handleInputChange}
+                    InputProps={{
+                        className: classes.input,
+                    }}
+                    InputLabelProps={{
+                        className: classes.inputLabel
+                    }}
+                />
+                <TextField
+                    name='from-email'
+                    label="Your Email" 
+                    required
+                    value={fromEmail} 
+                    className={classes.textBox}
+                    onChange={handleInputChange}
+                    InputProps={{
+                        className: classes.input,
+                    }}
+                    InputLabelProps={{
+                        className: classes.inputLabel
+                    }}
+                />
+                <TextField
+                    name='message' 
+                    label="Your Message" 
+                    required 
+                    className={classes.textBox}
+                    multiline
+                    maxRows={4}
+                    InputProps={{
+                        className: classes.input,
+                        style: { height: "5rem" }
+                    }}
+                    InputLabelProps={{
+                        className: classes.inputLabel
+                    }}
+                    value={message}
+                    onChange={handleInputChange}
+                />
             </div>
+            <div className={classes.buttonSendRoot}>
+                <Button 
+                    onClick={handleButtonSend}
+                    className={classes.button}>
+                    Send
+                </Button>
+            </div>
+            
+            {/* Hidden. Required by emailjs, values are mapped to state. */}
+            <form ref={formRef} onSubmit={handleSendEmail} style={{visibility: 'hidden'}}>
+                <div><input type='text' name='from_name' onChange={()=>{}} value={fromName}/></div>
+                <div><input type='text' name='from_email' onChange={()=>{}} value={fromEmail}/></div>
+                <div><input type='text' name='message' onChange={()=>{}} value={message}/></div>
+                <div><input id='button_send' type='submit' value='Send'/></div>                                                    
+            </form>                
         </div>
     );
 }

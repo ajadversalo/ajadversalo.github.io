@@ -25,8 +25,8 @@ function About(props: AboutProps) {
             <div style={{padding: '0 1rem'}}>
                 <h2 className={classes.title}>About Me</h2>
                 <div className={classes.contentText}>
-                    {content.map((c) => {
-                        return(<p>{c}</p>)
+                    {content.map((c, index) => {
+                        return(<p key={`paragraph-${index}`}>{c}</p>)
                     })}
                 </div>
             </div>
