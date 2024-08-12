@@ -97,12 +97,6 @@ const useStyles = makeStyles()(() => ({
         flexDirection: 'row', 
         justifyContent: 'space-between'        
     },
-    // aboutRoot: {
-    //     padding: '0 0.5rem 0 0.5rem', 
-    // },
-    // projectRoot: {
-    //     padding: '0 1.5rem 1rem 0.5rem', 
-    // },
     name: {
         fontSize: 'calc(2rem + 2vw)', 
         padding: '1rem 0', 
@@ -163,35 +157,9 @@ const useStyles = makeStyles()(() => ({
         // Firefox
         scrollbarWidth: 'none'
     },
-    // projectPortal: {
-    //      backgroundColor: '#FFF',
-
-    // },
-    // tooltip: {
-    //     "&:before": {
-    //         border: "1px solid red"
-    //       },
-    //     backgroundColor: '#FFF',
-    //     color: '#000',
-    //     fontFamily: 'Wix MadeFor Display',
-    //     padding: '0.5rem',
-    //     border: "1px solid darkgrey"
-    // },
-    // tooltipArrow: {
-    //     "&:before": {
-    //       border: "1px solid darkgrey"
-    //     },
-    //     color: '#FFF'
-    // },
-    // title:{
-    //     color: '#BB4430'
-    // },
     closeButton: {
         fill: '#587792'
     },
-    // contentText: {
-    //     color: '#587792'
-    // }
 }));
 
 function App() {
@@ -206,7 +174,7 @@ function App() {
     const [height, setHeight] = useState(window.innerHeight);
 
     useEffect(() => {
-        document.title ='A.J. Adversalo';
+        document.title ='AJ Adversalo';
     }, []);
 
     const getHeight = () => window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -248,7 +216,7 @@ function App() {
                         Hi There! I'm
                     </div>
                     <div className={classes.name}>
-                        A.J. Adversalo
+                        AJ Adversalo
                         <div className={classes.underscore}></div>
                     </div>                                     
                     <div className={classes.intro}>
