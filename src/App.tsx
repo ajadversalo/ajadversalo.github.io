@@ -203,7 +203,8 @@ function App() {
     return (
         <div className={classes.root}>
             <div>
-                <div className={isSm ? classes.buttonRootNarrow : classes.buttonRoot}>
+                <div className="text-xs">
+                    {/*<div className={isSm ? classes.buttonRootNarrow : classes.buttonRoot}>*/}
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('about')}}>About</div>
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
