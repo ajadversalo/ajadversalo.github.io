@@ -242,7 +242,6 @@ function App() {
                     <div className={classes.button} onClick={()=>{setOpen(true); setPage('contact')}}>Contact</div>
                 </div>
             </div>
-            <div className="line delay" style={{left: '98%'}}></div>
             <div style={{height: '100%'}}>
                 <div className={classes.headingRoot} style={{paddingTop: isSm ? '7rem' : '13rem'}}>                  
                     <div className={classes.greeting}>
