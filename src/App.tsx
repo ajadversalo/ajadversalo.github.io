@@ -216,7 +216,7 @@ function App() {
                         Hi There! I'm
                     </div>
                     <div className={classes.name}>
-                        AJ Adversalo
+                        A.J. Adversalo
                         <div className={classes.underscore}></div>
                     </div>                                     
                     <div className={classes.intro}>

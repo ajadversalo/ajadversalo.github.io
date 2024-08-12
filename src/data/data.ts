@@ -8,6 +8,14 @@ export const contactSubText: string = 'If you\'re in need of a skilled and dedic
 
 export const productList = [
     {
+        title: 'Centra Centralized Communication System',
+        description: ''
+    },
+    {
+        title: 'Window Production Tracking',
+        description: ''
+    },
+    {
         title: 'GenXys Portal', 
         description: 'https://cdn.portal.genxys.com for Canada and https://us.portal.genxys.com for the United States. This is the portal for Healthcare providers where they can purchase licenses and also manage their user account and preferences.'        
     },
