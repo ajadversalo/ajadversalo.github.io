@@ -206,7 +206,7 @@ function App() {
     const [height, setHeight] = useState(window.innerHeight);
 
     useEffect(() => {
-        document.title ='AJ Adversalo';
+        document.title ='A.J. Adversalo';
     }, []);
 
     const getHeight = () => window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
