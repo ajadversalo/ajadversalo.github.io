@@ -207,7 +207,7 @@ function App() {
                     <div onClick={()=>{setOpen(true); setPage('about')}}>About</div>
                     <div onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
                     <div onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
-                    <div onClick={()=>{setOpen(true); setPage('contact')}}>Contacts</div>
+                    <div onClick={()=>{setOpen(true); setPage('contact')}}>Contactssss</div>
                 </div>
             </div>
             <div style={{height: '100%'}}>
