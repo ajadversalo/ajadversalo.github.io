@@ -203,7 +203,7 @@ function App() {
     return (
         <div className="p-4">
             <div className="flex justify-center">
-                <div className="text-lg flex flex-row justify-between w-[20rem] text-white">
+                <div className="text-lg flex flex-row justify-between w-[20rem] text-red-200">
                     <div onClick={()=>{setOpen(true); setPage('about')}}>About</div>
                     <div onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
                     <div onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
