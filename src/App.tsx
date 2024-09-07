@@ -174,7 +174,7 @@ function App() {
     const [height, setHeight] = useState(window.innerHeight);
 
     useEffect(() => {
-        document.title ='AJ Adversalo';
+        document.title ='Adversalo';
     }, []);
 
     const getHeight = () => window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -201,14 +201,13 @@ function App() {
     };
 
     return (
-        <div className={classes.root}>
-            <div>
-                <div className="text-xs">
-                    {/*<div className={isSm ? classes.buttonRootNarrow : classes.buttonRoot}>*/}
-                    <div className={classes.button} onClick={()=>{setOpen(true); setPage('about')}}>About</div>
-                    <div className={classes.button} onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
-                    <div className={classes.button} onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
-                    <div className={classes.button} onClick={()=>{setOpen(true); setPage('contact')}}>Contact</div>
+        <div className="p-4">
+            <div className="flex justify-center">
+                <div className="text-lg flex flex-row justify-between w-[20rem] text-white">
+                    <div onClick={()=>{setOpen(true); setPage('about')}}>About</div>
+                    <div onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
+                    <div onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
+                    <div onClick={()=>{setOpen(true); setPage('contact')}}>Contact</div>
                 </div>
             </div>
             <div style={{height: '100%'}}>
