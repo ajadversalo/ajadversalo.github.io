@@ -201,17 +201,37 @@ function App() {
     };
 
     return (
-        <div className="p-4">
-            <div className="flex justify-center">
-                <div className="text-lg flex flex-row justify-between w-[20rem] text-red-200">
-                    <div onClick={()=>{setOpen(true); setPage('about')}}>About</div>
-                    <div onClick={()=>{setOpen(true); setPage('skills')}}>Skills</div>
-                    <div onClick={()=>{setOpen(true); setPage('projects')}}>Projects</div>
-                    <div onClick={()=>{setOpen(true); setPage('contact')}}>Contactssss</div>
+        <div className="p-4 h-screen">
+            <div className="flex justify-center text-white sticky top-0">
+                <div className="text-lg flex flex-row justify-between w-[20rem]">
+                    <div
+                        onClick={() => { setOpen(true); setPage('about') }}
+                        className="hover:cursor-pointer"
+                    >
+                        About
+                    </div>
+                    <div
+                        onClick={() => { setOpen(true); setPage('skills') }}
+                        className="hover:cursor-pointer"
+                    >
+                        Skills
+                    </div>
+                    <div
+                        onClick={() => { setOpen(true); setPage('projects') }}
+                        className="hover:cursor-pointer"
+                    >
+                        Projects
+                    </div>
+                    <div
+                        onClick={() => { setOpen(true); setPage('contact') }}
+                        className="hover:cursor-pointer"
+                    >
+                        Contact
+                    </div>
                 </div>
             </div>
-            <div style={{height: '100%'}}>
-                <div className={classes.headingRoot} style={{paddingTop: isSm ? '7rem' : '13rem'}}>                  
+            <div>
+                <div className={classes.headingRoot}>                  
                     <div className={classes.greeting}>
                         Hi There! I'm
                     </div>
@@ -230,52 +250,57 @@ function App() {
                     </div>
                 </div>               
             </div>
-            <div>
-                <div className={isSm ? classes.iconRootNarrow : classes.iconRoot} style={height < 550 ? { position: 'relative', paddingTop: '2rem'} : {position: 'absolute', bottom: 15}}>
-                    <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
-                        {<LinkedInIcon className={classes.icon}/>}
-                    </IconButton>
-                    <IconButton onClick={()=>window.open('https://github.com/ajadversalo', '_blank')}>
-                        {<GitHubIcon className={classes.icon} />}
-                    </IconButton>
-                </div>
-            </div>
-            <SwipeableDrawer
-                anchor={isSm ? 'bottom' : 'right'}
-                open={open}
-                onClose={()=>{setOpen(false)}}
-                onOpen={()=>{setOpen(true)}}
-                classes={{ paper: page === 'contact' ? classes.drawerPaperContact : classes.drawerPaper }}                
-            >
-                <div className={isSm ? classes.drawerNarrow : classes.drawer}>
-                    <div className={classes.drawerHeader} >
-                        <IconButton 
-                            onClick={()=>{setOpen(false); setPage('');}}
-                            style={{paddingLeft: '0.8rem'}}                        
-                        >
-                            {<CloseIcon className={classes.closeButton}/>}
+            {false &&
+                <div>
+                    <div className={isSm ? classes.iconRootNarrow : classes.iconRoot} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
+                        <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
+                            {<LinkedInIcon className={classes.icon} />}
                         </IconButton>
-                        { page === 'resume' &&
-                            <Tooltip title='download' placement='right'>
-                                <IconButton onClick={onDownload}>
-                                    {<SaveAltIcon style={{ fill: 'grey' }} />}
-                                </IconButton>
-                            </Tooltip>
-                        }
+                        <IconButton onClick={() => window.open('https://github.com/ajadversalo', '_blank')}>
+                            {<GitHubIcon className={classes.icon} />}
+                        </IconButton>
                     </div>
-                    { page === 'about' && <About content={aboutContent}/> }
-                    { page === 'skills' && <Skills /> }
-                    { page === 'projects' && <Projects productList={productList}/> }
-                    { page === 'contact' && 
-                        <Contact                             
-                            setOpenPopup={setOpenPopup}
-                            setPopupMsg={setPopupMsg}
-                            setOpen={setOpen}
-                        /> 
-                    }
-                    { page === 'resume' && <Resume/> }
-                </div>                
-          </SwipeableDrawer>
+                </div>
+            }
+            <About content={aboutContent} />
+            {false &&
+                <SwipeableDrawer
+                    anchor={isSm ? 'bottom' : 'right'}
+                    open={open}
+                    onClose={() => { setOpen(false) }}
+                    onOpen={() => { setOpen(true) }}
+                    classes={{ paper: page === 'contact' ? classes.drawerPaperContact : classes.drawerPaper }}
+                >
+                    <div className={isSm ? classes.drawerNarrow : classes.drawer}>
+                        <div className={classes.drawerHeader} >
+                            <IconButton
+                                onClick={() => { setOpen(false); setPage(''); }}
+                                style={{ paddingLeft: '0.8rem' }}
+                            >
+                                {<CloseIcon className={classes.closeButton} />}
+                            </IconButton>
+                            {page === 'resume' &&
+                                <Tooltip title='download' placement='right'>
+                                    <IconButton onClick={onDownload}>
+                                        {<SaveAltIcon style={{ fill: 'grey' }} />}
+                                    </IconButton>
+                                </Tooltip>
+                            }
+                        </div>
+                        {page === 'about' && <About content={aboutContent} />}
+                        {page === 'skills' && <Skills />}
+                        {page === 'projects' && <Projects productList={productList} />}
+                        {page === 'contact' &&
+                            <Contact
+                                setOpenPopup={setOpenPopup}
+                                setPopupMsg={setPopupMsg}
+                                setOpen={setOpen}
+                            />
+                        }
+                        {page === 'resume' && <Resume />}
+                    </div>
+                </SwipeableDrawer>
+            }
           <Snackbar 
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} 
             open={openPopup} 
