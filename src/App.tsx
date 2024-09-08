@@ -205,7 +205,7 @@ function App() {
     return (
         <div className="">
             <div className="flex justify-center text-white sticky top-0 bg-black pt-2 pb-2 z-[50]">
-                <div className="text-lg flex flex-row justify-between border-box">
+                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">
                     <a
                         href="#about"
                         onClick={() => { setOpen(true); setPage('about') }}
@@ -248,7 +248,7 @@ function App() {
                         <div className={classes.underscore}></div>
                     </div>                                     
                     <div className={classes.intro}>
-                        I'm a full-stack software developer passionate in creating robust, user-friendly web applications that make a difference.
+                        I'm a full-stack developer focused on creating efficient, user-centric web applications. I specialize in simplifying complex workflows and delivering practical solutions.
                     </div>                         
                     <div style={{ paddingTop: '2rem' }}>
                         <Button  className={classes.resumeButton}                                                      
