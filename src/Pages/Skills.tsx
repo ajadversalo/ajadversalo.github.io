@@ -1,47 +1,6 @@
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
-const useStyles = makeStyles()(() => ({
-    root: {
-        padding: '0 2rem'        
-    },
-    title:{
-        color: '#587792'
-    },
-    subText:{
-        color: '#000',
-        paddingBottom: '1rem', 
-        paddingTop: '0.3rem'
-    },
-    subTextValue:{
-        color: 'rgba(0, 0, 0, 0.6)',
-        fontSize: '0.8rem'        
-    },
-    contentText: {
-        color: '#587792',
-        paddingTop: '0.2rem'
-    },
-    cardRoot: {
-        padding: '0.1rem 0.2rem', 
-        margin: '0.5rem 0.5rem'
-    },
-    icon: {
-        fill: '#FFF'
-    },
-    productTitle: {
-        width: '11rem',
-        color: '#000',
-        paddingRight: '2rem'
-    },
-    divider: {         
-        backgroundColor: '#000', 
-        height: '1px',         
-        marginTop: '-0.8rem',
-        width: '100%'
-    }
-}));
+import { Divider } from "antd";
 
 type SkillsProps = {
     category: string,
@@ -50,10 +9,6 @@ type SkillsProps = {
 
 
 function Skills() {
-    const theme = useTheme();
-    const isSm = useMediaQuery(theme.breakpoints.down('sm'));
-    const { classes } = useStyles();
-
     let skills: SkillsProps[] = [
         {
             category: 'Front-End', 
@@ -83,11 +38,11 @@ function Skills() {
     
     const Skill = (props: any) => {            
         return (
-            <div style={{display: 'flex', flexDirection: isSm ? 'column' : 'row', paddingTop: '1rem'}}>
-                <div className={classes.productTitle} style={{textAlign: isSm ? 'left' : 'right'}}>
+            <div style={{display: 'flex', paddingTop: '1rem'}}>
+                <div className={""}>
                     {props.category}
                 </div>
-                <div className={classes.contentText} style={{fontSize: '0.8rem', width: '100%'}}>
+                <div className={""} style={{fontSize: '0.8rem', width: '100%'}}>
                     {props.items}
                 </div>
             </div>
@@ -95,9 +50,10 @@ function Skills() {
     }
 
     return (
-        <div className={classes.root}>
-            <h2 className={classes.title}>Skills</h2>                                                                   
-            <div className={classes.divider}></div>                                  
+        <div className={"text-white m-4 h-screen"}>
+            <h2 className={"text-2xl"}>Skills</h2>
+            <Divider className="bg-white" />                                                               
+            <div className={""}></div>                                  
             <div style={{paddingTop: '1rem'}}>
                 {skills.map((p: any) => {
                     return (

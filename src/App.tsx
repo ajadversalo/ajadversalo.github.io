@@ -54,34 +54,26 @@ function App() {
         link.click();
     };
 
+    const AnchorLink = (props: any) => {
+        const { href, label } = props;
+        return (
+            <a
+                href={href}
+                className="border-b-2 border-transparent hover:border-white hover:cursor-pointer transition transform duration-500 ease-in-out"
+            >
+                {label}
+            </a>
+        );
+    }
+
     return (
         <div className="bg-sky-900">
             <div className="flex justify-center text-white sticky top-0 bg-black pt-2 pb-2 z-[50]">
                 <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">
-                    <a
-                        href="#about"
-                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
-                    >
-                        About
-                    </a>
-                    <a
-                        href="#skills"
-                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
-                    >
-                        Skills
-                    </a>
-                    <a
-                        href="#project"
-                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
-                    >
-                        Projects
-                    </a>
-                    <a
-                        href="#contact"
-                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
-                    >
-                        Contact
-                    </a>
+                    <AnchorLink href={"#about"} label={"About"} />
+                    <AnchorLink href={"#skills"} label={"Skills"} />
+                    <AnchorLink href={"#projects"} label={"Projects"} />
+                    <AnchorLink href={"#contact"} label={"Contact"} />                  
                 </div>
             </div>
             <div className="h-screen">
