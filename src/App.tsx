@@ -239,12 +239,12 @@ function App() {
             <div className="h-screen">
             
             <div className="h-full flex items-center justify-center">
-                <div className={"w-[40rem] text-white"}>                  
+                <div className={"w-[40rem] text-white p-2"}>                  
                     <div className={"text-xl pb-4"}>
                         Hi There! I'm
                     </div>
                     <div className={"text-6xl"}>
-                        A.J. Adversalo                        
+                        AJ Adversalo                        
                     </div>
                     <Divider className="bg-white"/>
                     <div className={"text-3xl"}>
