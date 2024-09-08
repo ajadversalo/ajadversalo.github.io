@@ -205,7 +205,7 @@ function App() {
     return (
         <div className="">
             <div className="flex justify-center text-white sticky top-0 bg-black pt-2 pb-2 z-[50]">
-                <div className="text-lg flex flex-row justify-between min-w-[40rem] border-box">
+                <div className="text-lg flex flex-row justify-between border-box">
                     <a
                         href="#about"
                         onClick={() => { setOpen(true); setPage('about') }}

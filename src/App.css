@@ -1,6 +1,9 @@
 body {
-  font-family: 'Wix MadeFor Display'; 
- background-color: #282C2F;
+    /*font-family: 'Wix MadeFor Display', sans-serif;    */
+    font-family: "Roboto", system-ui;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #282C2F;
 }
 
 /* .App {
@@ -8,10 +11,6 @@ body {
  height: 100vh;
  background-color: #023047;
 } */
-
-html {
-    scroll-behavior: smooth;
-}
 
 .line {
  position: absolute;
