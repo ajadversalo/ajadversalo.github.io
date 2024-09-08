@@ -238,26 +238,27 @@ function App() {
             </div>
             <div className="h-screen">
             
-            <div>
-                <div className={classes.headingRoot}>                  
-                    <div className={classes.greeting}>
+            <div className="h-full flex items-center justify-center">
+                <div className={"w-[40rem] text-white"}>                  
+                    <div className={"text-xl pb-4"}>
                         Hi There! I'm
                     </div>
-                    <div className={classes.name}>
-                        A.J. Adversalo
-                        <div className={classes.underscore}></div>
-                    </div>                                     
-                    <div className={classes.intro}>
+                    <div className={"text-6xl"}>
+                        A.J. Adversalo                        
+                    </div>
+                    <Divider className="bg-white"/>
+                    <div className={"text-3xl"}>
                         I'm a full-stack developer focused on creating efficient, user-centric web applications. I specialize in simplifying complex workflows and delivering practical solutions.
-                    </div>                         
+                    divider</div>
                     <div style={{ paddingTop: '2rem' }}>
                         <Button  className={classes.resumeButton}                                                      
                             onClick={()=>{setOpen(true); setPage('resume')}}>
                                 My Resume
                         </Button>
                     </div>
-                </div>               
+                </div>
             </div>
+
             {false &&
                 <div>
                     <div className={isSm ? classes.iconRootNarrow : classes.iconRoot} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
