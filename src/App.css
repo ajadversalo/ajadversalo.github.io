@@ -9,6 +9,10 @@ body {
  background-color: #023047;
 } */
 
+html {
+    scroll-behavior: smooth;
+}
+
 .line {
  position: absolute;
  width: 1px;

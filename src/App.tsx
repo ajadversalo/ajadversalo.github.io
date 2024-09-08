@@ -23,6 +23,8 @@ import Skills from './Pages/Skills';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
 
+import { Divider } from "antd";
+
 import { aboutContent, productList } from '../src/data/data';
 
 const useStyles = makeStyles()(() => ({
@@ -201,35 +203,41 @@ function App() {
     };
 
     return (
-        <div className="p-4 h-screen">
-            <div className="flex justify-center text-white sticky top-0">
-                <div className="text-lg flex flex-row justify-between w-[20rem]">
-                    <div
+        <div className="">
+            <div className="flex justify-center text-white sticky top-0 bg-black pt-2 pb-2 z-[50]">
+                <div className="text-lg flex flex-row justify-between min-w-[40rem] border-box">
+                    <a
+                        href="#about"
                         onClick={() => { setOpen(true); setPage('about') }}
-                        className="hover:cursor-pointer"
+                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
                     >
                         About
-                    </div>
-                    <div
+                    </a>
+                    <a
+                        href="#skills"
                         onClick={() => { setOpen(true); setPage('skills') }}
-                        className="hover:cursor-pointer"
+                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
                     >
                         Skills
-                    </div>
-                    <div
+                    </a>
+                    <a
+                        href="#project"
                         onClick={() => { setOpen(true); setPage('projects') }}
-                        className="hover:cursor-pointer"
+                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
                     >
                         Projects
-                    </div>
-                    <div
+                    </a>
+                    <a
+                        href="#contact"
                         onClick={() => { setOpen(true); setPage('contact') }}
-                        className="hover:cursor-pointer"
+                        className="border-b-2 border-transparent hover:border-white hover:cursor-pointer"
                     >
                         Contact
-                    </div>
+                    </a>
                 </div>
             </div>
+            <div className="h-screen">
+            
             <div>
                 <div className={classes.headingRoot}>                  
                     <div className={classes.greeting}>
@@ -262,7 +270,21 @@ function App() {
                     </div>
                 </div>
             }
+            </div>
+            <div id="about" className="pb-12"></div>
             <About content={aboutContent} />
+            <div id="skills" className="pb-12"></div>
+            <Skills />
+            <div id="projects" className="pb-12"></div>
+            <Projects productList={productList} />
+            <div id="contact" className="pb-12"></div>
+            <Contact
+                setOpenPopup={setOpenPopup}
+                setPopupMsg={setPopupMsg}
+                setOpen={setOpen}
+            />
+            <div id="resume" className="pb-12"></div>
+            <Resume />
             {false &&
                 <SwipeableDrawer
                     anchor={isSm ? 'bottom' : 'right'}

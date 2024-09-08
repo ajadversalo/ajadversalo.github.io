@@ -1,42 +1,24 @@
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles()(() => ({
-    root: {
-        padding: '0 0.5rem 0 0.5rem',
-        color: '#587792' 
-    },
-    title: {
-        color: '#587792' 
-    },
-    contentText: {
-    },
-    divider: {         
-        backgroundColor: '#000', 
-        height: '1px',         
-        marginTop: '-0.8rem',
-        width: '100%'
-    }
-}));
+import { Divider } from "antd";
 
 type AboutProps = {
     content: string[]
 }
 
-function About(props: AboutProps) {    
-    const { classes } = useStyles();
+function About(props: any) {
     const { content } = props;
 
     return(
-        <div className={classes.root} style={{height: '100%'}}>            
-            <div style={{padding: '0 1rem'}}>
-                <h2 className={classes.title}>About Me</h2>
-                <div className={classes.divider}></div>   
-                <div className={classes.contentText}>
-                    {content.map((c, index) => {
-                        return(<p key={`paragraph-${index}`}>{c}</p>)
-                    })}
-                </div>
+        <div className={"text-white m-4 h-screen"}>                        
+            <h2 className={"text-xl"}>About Me</h2> 
+            <Divider className="bg-white"/>
+            <div className="h-100 flex items-center justify-center w-full pt-8">
+                <div className={"p-4 max-w-[60rem] h-[15rem]"}>
+                    {content.map((c: any, index: number) => {
+                        return(<p className="pb-4" key={`paragraph-${index}`}>{c}</p>)
+                    })}                
+                </div> 
             </div>
         </div>
     );
