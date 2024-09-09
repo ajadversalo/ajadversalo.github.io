@@ -17,8 +17,8 @@ function About(props: any) {
                     <Divider className="bg-white" />
                 </div>
             </div>
-            <div className="flex items-center justify-center h-100 lg:h-full xl:h-full lg:m-[-5rem] lg:m-[-5rem]">
-                <div className="w-full text-lg lg:w-[60%] xl:w-[60%]">
+            <div className="flex items-center justify-center h-100 lg:h-full xl:h-full m-[-1rem] lg:m-[-5rem] lg:m-[-5rem]">
+                <div className="w-full text-sm lg:text-lg xl:text-lg lg:w-[60%] xl:w-[60%] ">
                     <div className={"p-4"}>
                         {content.map((c: any, index: number) => {
                             return(<p className="pb-4" key={`paragraph-${index}`}>{c}</p>)
