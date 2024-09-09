@@ -31,7 +31,7 @@ function Projects(props: ProjectsProps) {
     }
 
     return (
-        <div className={"text-white m-4 h-screen"}>                                                       
+        <div className={"bg-white p-4 h-screen pt-16"}>                                                       
             <h2 className={""}>Projects</h2>
             <div className={""}></div> 
             <img src={`./genxys-logo.png`} alt='genxys-logo' style={{width: '7rem', paddingTop: '1.5rem', paddingBottom: '0.5rem'}}/>            

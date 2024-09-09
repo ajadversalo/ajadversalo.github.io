@@ -113,13 +113,13 @@ function App() {
                 </div>
             }
             </div>
-            <div id="about" className="pb-12"></div>
+            <div id="about" className=""></div>
             <About content={aboutContent} />
-            <div id="skills" className="pb-12"></div>
+            <div id="skills" className=""></div>
             <Skills />
-            <div id="projects" className="pb-12"></div>
+            <div id="projects" className=""></div>
             <Projects productList={productList} />
-            <div id="contact" className="pb-12"></div>
+            <div id="contact" className=""></div>
             <Contact
                 setOpenPopup={setOpenPopup}
                 setPopupMsg={setPopupMsg}

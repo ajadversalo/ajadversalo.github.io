@@ -50,7 +50,7 @@ function Skills() {
     }
 
     return (
-        <div className={"text-white m-4 h-screen"}>
+        <div className={"text-white p-4 h-screen bg-sky-700 pt-16"}>
             <h2 className={"text-2xl"}>Skills</h2>
             <Divider className="bg-white" />                                                               
             <div className={""}></div>                                  
