@@ -69,11 +69,11 @@ function App() {
     return (
         <div className="bg-sky-900">
             <div className="flex justify-center text-white sticky top-0 bg-black pt-2 pb-2 z-[50]">
-                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">
-                    <AnchorLink href={"#about"} label={"About"} />
+                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">                    
                     <AnchorLink href={"#skills"} label={"Skills"} />
                     <AnchorLink href={"#projects"} label={"Projects"} />
-                    <AnchorLink href={"#contact"} label={"Contact"} />                  
+                    <AnchorLink href={"#contact"} label={"Contact"} />  
+                    <AnchorLink href={"#about"} label={"About"} />
                 </div>
             </div>
             <div className="h-screen">
