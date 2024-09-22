@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Divider } from "antd";
 import PageContainer from '../Pages/PageContainer';
 
 type AboutProps = {

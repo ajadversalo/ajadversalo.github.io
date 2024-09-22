@@ -20,7 +20,11 @@ import About from './Pages/About';
 
 import { Divider } from "antd";
 
-import { aboutContent, productList } from '../src/data/data';
+import {
+    aboutContent,
+    productListGenXys,
+    productListCentra
+} from '../src/data/data';
 
 function App() {
     const [popupMsg, setPopupMsg] = useState('');
@@ -74,6 +78,7 @@ function App() {
                     <AnchorLink href={"#projects"} label={"Projects"} />
                     <AnchorLink href={"#contact"} label={"Contact"} />  
                     <AnchorLink href={"#about"} label={"About"} />
+                    <AnchorLink href={"#myresume"} label={"My Resume"} />
                 </div>
             </div>
             <div className="h-screen">
@@ -118,8 +123,11 @@ function App() {
             <div id="skills" className=""></div>
             <Skills />
             <div id="projects" className=""></div>
-            <Projects productList={productList} />
-            <div id="contact" className=""></div>
+            <Projects
+                productList={productListGenXys}
+                productListCentra={productListCentra}
+            />
+            <div id="contact" className="mt-32"></div>
             <Contact
                 setOpenPopup={setOpenPopup}
                 setPopupMsg={setPopupMsg}

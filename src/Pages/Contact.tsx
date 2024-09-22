@@ -6,6 +6,7 @@ import emailjs from 'emailjs-com';
 import { emailPattern, serviceId, templateId, publicKey, contactSubText } from '../data/data';
 
 import { Input, Button } from "antd";
+const { TextArea } = Input;
 
 type ContactProps = {
     setOpen: Function,
@@ -89,17 +90,26 @@ function Contact(props: ContactProps) {
     return (
         <div>
             <PageContainer title="Contact">
-                <p>{contactSubText}</p>
-                <div className="w-100">
-                    <div className="mt-2">
-                        <Input placeholder={"Your Name"} />
+                <div className="mt-4 flex flex-row">
+                    <div className="w-[20%]"></div>
+                    <div className="w-100 text-left">
+                        {contactSubText}
                     </div>
-                    <div className="mt-4">
-                        <Input placeholder={"Your Email"} />
+                </div>
+                <div className="w-100 mt-8">
+                    <div className="mt-2 flex flex-row">
+                        <div className="w-[20%]">Your Name</div>
+                        <Input placeholder={""} />
                     </div>
-                    <div className="mt-4">
-                        <Input
-                            placeholder={"Message"}
+                    <div className="mt-4 flex flex-row">
+                        <div className="w-[20%]">Your Email</div>
+                        <Input placeholder={""} />
+                    </div>
+                    <div className="mt-4 flex flex-row">
+                        <div className="w-[20%]">Message</div>
+                        <TextArea
+                            rows={3}
+                            placeholder={""}
                             name='message'
                             value={message}
                             onChange={handleInputChange}

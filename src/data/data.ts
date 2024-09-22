@@ -6,15 +6,7 @@ export const aboutContent: string[] = [
 
 export const contactSubText: string = 'If you\'re in need of a skilled and dedicated software developer, I would be thrilled to chat with you. Please don\'t hesitate to reach out and get in touch.';
 
-export const productList = [
-    {
-        title: 'Centra Centralized Communication System',
-        description: ''
-    },
-    {
-        title: 'Window Production Tracking',
-        description: ''
-    },
+export const productListGenXys = [
     {
         title: 'GenXys Portal', 
         description: 'https://cdn.portal.genxys.com for Canada and https://us.portal.genxys.com for the United States. This is the portal for Healthcare providers where they can purchase licenses and also manage their user account and preferences.'        
@@ -43,6 +35,17 @@ export const productList = [
         title: 'Patient Dashboard', 
         description: 'User portal where patients can see their lab reports and medication reviews.'
     }
+];
+
+export const productListCentra = [
+    {
+        title: 'Centra Centralized Communication System',
+        description: ''
+    },
+    {
+        title: 'Window Production Tracking',
+        description: ''
+    },
 ];
 
 export const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // eslint-disable-line
