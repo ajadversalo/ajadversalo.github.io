@@ -30,8 +30,8 @@ function Projects(props: ProjectsProps) {
     }
 
     return (
-        <PageContainer title="Projects">                        
-            <div className="flex flex-row mt-40">
+        <PageContainer title="Projects" className="">                        
+            <div className="flex flex-row">
                 <div className={"w-[20%]"}>
                     <img src={`./centra-logo.png`} alt='genxys-logo' style={{ width: '7rem', paddingTop: '1.5rem', paddingBottom: '0.5rem' }} />
                 </div>

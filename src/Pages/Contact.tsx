@@ -89,24 +89,21 @@ function Contact(props: ContactProps) {
 
     return (
         <div>
-            <PageContainer title="Contact">
-                <div className="mt-4 flex flex-row">
-                    <div className="w-[20%]"></div>
-                    <div className="w-100 text-left">
-                        {contactSubText}
-                    </div>
+            <PageContainer title="Contact" fillScreen={true}>
+                <div className="flex flex-row">                 
+                    {contactSubText}                    
                 </div>
-                <div className="w-100 mt-8">
-                    <div className="mt-2 flex flex-row">
-                        <div className="w-[20%]">Your Name</div>
+                <div className="w-100 mt-16">
+                    <div className={`mt-2 flex flex-col lg:flex-row`}>
+                        <div className="lg:w-[20%] mb-2 lg:mb-0">Your Name</div>
                         <Input placeholder={""} />
                     </div>
-                    <div className="mt-4 flex flex-row">
-                        <div className="w-[20%]">Your Email</div>
+                    <div className="mt-4 flex  flex-col lg:flex-row">
+                        <div className="lg:w-[20%] mb-2 lg:mb-0">Your Email</div>
                         <Input placeholder={""} />
                     </div>
-                    <div className="mt-4 flex flex-row">
-                        <div className="w-[20%]">Message</div>
+                    <div className="mt-4 flex  flex-col lg:flex-row">
+                        <div className={`lg:w-[20%] mb-2 lg:mb-0`}>Message</div>
                         <TextArea
                             rows={3}
                             placeholder={""}

@@ -70,24 +70,26 @@ function App() {
         );
     }
 
-    return (
-        <div className="bg-sky-900">
-            <div className="flex justify-center text-white sticky top-0 bg-black pt-2 pb-2 z-[50]">
-                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">                    
+    const NavBar = () => {
+        return (
+            <div className="flex justify-center text-white fixed bottom-0 lg:sticky lg:top-0 bg-black pt-2 pb-2 z-[50] w-full">
+                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">
                     <AnchorLink href={"#skills"} label={"Skills"} />
                     <AnchorLink href={"#projects"} label={"Projects"} />
-                    <AnchorLink href={"#contact"} label={"Contact"} />  
-                    <AnchorLink href={"#about"} label={"About"} />
+                    <AnchorLink href={"#contact"} label={"Contact"} />
+                    {false && <AnchorLink href={"#about"} label={"About"} />}
                     <AnchorLink href={"#myresume"} label={"My Resume"} />
                 </div>
             </div>
-            <div className="h-screen">
-            
+        );
+    }
+
+    return (
+        <div className="bg-sky-900 relative">
+            <NavBar />
+            <div className="h-screen">            
             <div className="h-full flex items-center justify-center">
-                <div className={"w-[40rem] text-white p-2"}>                  
-                    <div className={"text-xl pb-4"}>
-                        Hi There! I'm
-                    </div>
+                <div className={"w-[40rem] text-white p-2"}>                                      
                     <div className={"text-6xl"}>
                         AJ Adversalo                        
                     </div>
@@ -95,16 +97,17 @@ function App() {
                     <div className={"text-3xl"}>
                         I'm a full-stack developer focused on creating efficient, user-centric web applications. I specialize in simplifying complex workflows and delivering practical solutions.
                     </div>
-                    <div style={{ paddingTop: '2rem' }}>
+                    {false &&
+                        <div style={{ paddingTop: '2rem' }}>
                             <Button className={""}
                                 onClick={() => { }}
                             >
                                 My Resume
-                        </Button>
-                    </div>
+                            </Button>
+                        </div>
+                    }
                 </div>
-            </div>
-
+                </div>
             {false &&
                 <div>
                     <div className={""} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
@@ -118,8 +121,13 @@ function App() {
                 </div>
             }
             </div>
-            <div id="about" className=""></div>
-            <About content={aboutContent} />
+
+            {false &&
+                <>
+                    <div id="about" className=""></div>
+                    <About content={aboutContent} />
+                </>
+            }
             <div id="skills" className=""></div>
             <Skills />
             <div id="projects" className=""></div>
@@ -127,7 +135,7 @@ function App() {
                 productList={productListGenXys}
                 productListCentra={productListCentra}
             />
-            <div id="contact" className="mt-32"></div>
+            <div id="contact" className=""></div>
             <Contact
                 setOpenPopup={setOpenPopup}
                 setPopupMsg={setPopupMsg}

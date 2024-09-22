@@ -38,11 +38,11 @@ function Skills() {
     
     const Skill = (props: any) => {
         return (
-            <div style={{display: 'flex', paddingTop: '1rem'}}>
+            <div className={"flex flex-col sm:flex-row mb-2"}>
                 <div className={"w-[15rem]"}>
                     {props.category}
                 </div>
-                <div className={"w-100"}>
+                <div className={`w-100 ml-4 lg:ml-0 w-full`}>
                     {props?.items?.split(",").map((sk: string, index: number) => {
                         return (
                             <span className="pr-1">
@@ -57,7 +57,7 @@ function Skills() {
     }
 
     return (
-        <PageContainer title="Skills">
+        <PageContainer title="Skills" fillScreen={true}>
             {skills.map((p: any) => {
                 return (
                     <Skill
