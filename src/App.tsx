@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFileLines, faListCheck, faDiagramProject, faEnvelope, faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
+
 import Button from '@mui/material/Button';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
@@ -18,7 +21,7 @@ import Skills from './Pages/Skills';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
 
-import { Divider } from "antd";
+import { Divider, Modal } from "antd";
 
 import {
     aboutContent,
@@ -30,9 +33,12 @@ function App() {
     const [popupMsg, setPopupMsg] = useState('');
     const [openPopup, setOpenPopup] = useState(false);
     const [height, setHeight] = useState(window.innerHeight);
+    const [showResume, setShowResume] = useState(false);
+    const [selected, setSelected] = useState(null);
+    const [isAtTop, setIsAtTop] = useState(false);
 
     useEffect(() => {
-        document.title ='Adversalo';
+        document.title = 'Adversalo';
     }, []);
 
     const getHeight = () => window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -40,13 +46,13 @@ function App() {
     useEffect(() => {
         const resizeListener = () => {
             setHeight(getHeight())
-          };
-          window.addEventListener('resize', resizeListener);
-          return () => {
+        };
+        window.addEventListener('resize', resizeListener);
+        return () => {
             window.removeEventListener('resize', resizeListener);
-          }
-    },[]);
-        
+        }
+    }, []);
+
     const handleClosePopup = () => {
         setOpenPopup(false);
     }
@@ -59,67 +65,112 @@ function App() {
     };
 
     const AnchorLink = (props: any) => {
-        const { href, label } = props;
+        const { href, label, selected, setSelected, onClick } = props;
         return (
             <a
                 href={href}
-                className="border-b-2 border-transparent hover:border-white hover:cursor-pointer transition transform duration-500 ease-in-out"
+                className={`border-b-2 border-transparent hover:cursor-pointer hover:border-white ${selected ? "border-b-2 border-white" : ""} pl-2 pr-2 transition transform duration-500 ease-in-out`}
+                onClick={() => { setSelected(label); onClick?.() }}
             >
-                {label}
+                {props.children}
             </a>
         );
     }
 
     const NavBar = () => {
         return (
-            <div className="flex justify-center text-white fixed bottom-0 lg:sticky lg:top-0 bg-black pt-2 pb-2 z-[50] w-full">
-                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[40rem] xl:w-[40rem] pl-4 pr-4">
-                    <AnchorLink href={"#skills"} label={"Skills"} />
-                    <AnchorLink href={"#projects"} label={"Projects"} />
-                    <AnchorLink href={"#contact"} label={"Contact"} />
+            <div className="flex justify-center text-white fixed bottom-0 lg:sticky lg:top-0 bg-gray-900 pt-3 pb-3 z-[50] w-full">
+                <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[60%] pl-4 pr-4">
+                    <i className="fa-solid fa-diagram-project" />
+                    <AnchorLink href={"#skills"} label={"Skills"} selected={selected === "Skills"} setSelected={setSelected}>
+                        <div className="flex flex-col lg:flex-row">
+                            <FontAwesomeIcon icon={faListCheck} className="lg:mt-1" />
+                            <span className="lg:pl-2">Skills</span>
+                        </div>
+                    </AnchorLink>
+                    <AnchorLink href={"#projects"} label={"Projects"} selected={selected === "Projects"} setSelected={setSelected}>
+                        <div className="flex flex-col lg:flex-row">
+                            <FontAwesomeIcon icon={faDiagramProject} className="lg:mt-1" />
+                            <span className="pl-2">Projects</span>
+                        </div>
+                    </AnchorLink>
+                    <AnchorLink href={"#contact"} label={"Contact"} selected={selected === "Contact"} setSelected={setSelected}>
+                        <div className="flex flex-col lg:flex-row">
+                            <FontAwesomeIcon icon={faEnvelope} className="lg:mt-1" />
+                            <span className="pl-2">Contact</span>
+                        </div>
+                    </AnchorLink>
+                    <AnchorLink
+                        label={"My Resume"}
+                        selected={selected === "My Resume"}
+                        setSelected={setSelected}
+                        onClick={() => setShowResume(true)}
+                    >
+                        <div className="flex flex-col lg:flex-row">
+                            <FontAwesomeIcon icon={faFileLines} className="lg:mt-1" />
+                            <span className="pl-2">My Resume</span>
+                        </div>
+                    </AnchorLink>
                     {false && <AnchorLink href={"#about"} label={"About"} />}
-                    <AnchorLink href={"#myresume"} label={"My Resume"} />
+
                 </div>
             </div>
         );
     }
+    
+    window.addEventListener('scroll', () => {
+        function isScrolledToTop() {
+            return window?.pageYOffset === 0;
+        }
+
+        if (isScrolledToTop()) {
+            setIsAtTop(true);
+        } else {
+            setIsAtTop(false);
+        }
+    });
 
     return (
-        <div className="bg-sky-900 relative">
+        <div className="bg-sky-900 relative" id="top">
             <NavBar />
-            <div className="h-screen">            
-            <div className="h-full flex items-center justify-center">
-                <div className={"w-[40rem] text-white p-2"}>                                      
-                    <div className={"text-6xl"}>
-                        AJ Adversalo                        
-                    </div>
-                    <Divider className="bg-white"/>
-                    <div className={"text-3xl"}>
-                        I'm a full-stack developer focused on creating efficient, user-centric web applications. I specialize in simplifying complex workflows and delivering practical solutions.
-                    </div>
-                    {false &&
-                        <div style={{ paddingTop: '2rem' }}>
-                            <Button className={""}
-                                onClick={() => { }}
-                            >
-                                My Resume
-                            </Button>
+            <div className="h-screen">
+                <div className="h-full flex items-center justify-center pl-2 pr-2">
+                    <div className={"w-[50rem] text-white p-2 mt-[-3rem]"}>
+                        <div className={"text-6xl"}>
+                            AJ Adversalo
                         </div>
-                    }
-                </div>
-                </div>
-            {false &&
-                <div>
-                    <div className={""} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
-                        <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
-                            {<LinkedInIcon className={""} />}
-                        </IconButton>
-                        <IconButton onClick={() => window.open('https://github.com/ajadversalo', '_blank')}>
-                            {<GitHubIcon className={""} />}
-                        </IconButton>
+                        <Divider className="bg-white" />
+                        <div className={"text-3xl"}>
+                            Experienced full-stack developer with over 5 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
+                        </div>
+                        {!isAtTop &&
+                            <a href={"#top"}>
+                                <FontAwesomeIcon icon={faCircleChevronUp} size="2xl" className="fixed bottom-[90px] right-5  rounded-full h-[3rem] w-[3rem] opacity-30 hover:cursor-pointer" />
+                            </a>
+                        }
+                        {false &&
+                            <div style={{ paddingTop: '2rem' }}>
+                                <Button className={""}
+                                    onClick={() => { }}
+                                >
+                                    My Resume
+                                </Button>
+                            </div>
+                        }
                     </div>
                 </div>
-            }
+                {false &&
+                    <div>
+                        <div className={""} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
+                            <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
+                                {<LinkedInIcon className={""} />}
+                            </IconButton>
+                            <IconButton onClick={() => window.open('https://github.com/ajadversalo', '_blank')}>
+                                {<GitHubIcon className={""} />}
+                            </IconButton>
+                        </div>
+                    </div>
+                }
             </div>
 
             {false &&
@@ -141,20 +192,26 @@ function App() {
                 setPopupMsg={setPopupMsg}
                 setOpen={() => { }}
             />
-            <div id="resume" className="pb-12"></div>
-            <Resume />            
-          <Snackbar 
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} 
-            open={openPopup} 
-            autoHideDuration={5000} 
-            onClose={handleClosePopup}>
-                <MuiAlert 
-                    severity={'info'} 
-                    variant='filled' 
+            <Modal
+                open={showResume}
+                width={1000}
+                footer={null}
+                onCancel={() => setShowResume(false)}
+            >
+                <Resume />
+            </Modal>
+            <Snackbar
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                open={openPopup}
+                autoHideDuration={5000}
+                onClose={handleClosePopup}>
+                <MuiAlert
+                    severity={'info'}
+                    variant='filled'
                     onClose={handleClosePopup}>
-                        {popupMsg}
+                    {popupMsg}
                 </MuiAlert>
-          </Snackbar>          
+            </Snackbar>
         </div>
     );
 }

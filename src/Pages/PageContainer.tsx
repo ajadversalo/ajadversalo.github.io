@@ -12,7 +12,7 @@ function PageContainer(props: any) {
     const { title, className, fillScreen } = props;
 
     return(
-        <div className={`text-white p-4 ${fillScreen ? "h-screen" : ""} lg:pt-16 ${className}`}>
+        <div className={`text-white p-4 ${fillScreen ? "h-screen" : "lg:h-screen"} lg:pt-16 ${className}`}>
             <div className="flex items-center justify-center">
                 <div className="w-full lg:w-[65%] xl:w-[65%]">
                     <h2 className={"text-2xl"}>{title}</h2> 
