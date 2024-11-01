@@ -39,12 +39,12 @@ export const productListGenXys = [
 
 export const productListCentra = [
     {
-        title: 'Centra Centralized Communication System',
-        description: ''
+        title: 'Scheduling Software for Cross-Departmental Workflow Management',
+        description: 'A scheduling software solution, designed to streamline operations across multiple departments, including manufacturing, installation, and shipping. This tool enables real-time tracking and scheduling of work orders, improving workflow visibility and coordination. The software integrates seamlessly with departmental needs, ensuring that each team stays informed and synchronized, ultimately reducing downtime and enhancing productivity.'
     },
     {
-        title: 'Window Production Tracking',
-        description: ''
+        title: 'Manufacturing Tracking Software',
+        description: 'This application is tailored for the window and door manufacturing process. This tool provides comprehensive, real-time insights into each stage of production, ensuring transparency and control from start to finish. Used by the manufacturing team, it captures and displays live production stats, enabling teams to monitor progress, optimize workflow, and address bottlenecks quickly. This solution empowers teams to maintain high standards of efficiency and quality throughout the manufacturing lifecycle.'
     },
 ];
 

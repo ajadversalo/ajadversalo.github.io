@@ -81,23 +81,22 @@ function App() {
         return (
             <div className="flex justify-center text-white fixed bottom-0 lg:sticky lg:top-0 bg-gray-900 pt-3 pb-3 z-[50] w-full">
                 <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[60%] pl-4 pr-4">
-                    <i className="fa-solid fa-diagram-project" />
                     <AnchorLink href={"#skills"} label={"Skills"} selected={selected === "Skills"} setSelected={setSelected}>
                         <div className="flex flex-col lg:flex-row">
                             <FontAwesomeIcon icon={faListCheck} className="lg:mt-1" />
-                            <span className="lg:pl-2">Skills</span>
+                            <span className="pl-2 text-sm lg:text-lg">Skills</span>
                         </div>
                     </AnchorLink>
                     <AnchorLink href={"#projects"} label={"Projects"} selected={selected === "Projects"} setSelected={setSelected}>
                         <div className="flex flex-col lg:flex-row">
                             <FontAwesomeIcon icon={faDiagramProject} className="lg:mt-1" />
-                            <span className="pl-2">Projects</span>
+                            <span className="pl-2 text-sm lg:text-lg">Projects</span>
                         </div>
                     </AnchorLink>
                     <AnchorLink href={"#contact"} label={"Contact"} selected={selected === "Contact"} setSelected={setSelected}>
                         <div className="flex flex-col lg:flex-row">
                             <FontAwesomeIcon icon={faEnvelope} className="lg:mt-1" />
-                            <span className="pl-2">Contact</span>
+                            <span className="pl-2 text-sm lg:text-lg">Contact</span>
                         </div>
                     </AnchorLink>
                     <AnchorLink
@@ -108,7 +107,7 @@ function App() {
                     >
                         <div className="flex flex-col lg:flex-row">
                             <FontAwesomeIcon icon={faFileLines} className="lg:mt-1" />
-                            <span className="pl-2">My Resume</span>
+                            <span className="pl-2 text-sm lg:text-lg">My Resume</span>
                         </div>
                     </AnchorLink>
                     {false && <AnchorLink href={"#about"} label={"About"} />}
