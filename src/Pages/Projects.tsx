@@ -22,7 +22,7 @@ function Projects(props: ProjectsProps) {
                 <div className="w-100 text-[#66B2B2] font-semibold">
                     {props.title}
                 </div>
-                <div className="w-100 pl-4 xl:pl-4 lg:pl-4 lg:w-[80%] xl:w-[80%] text-sm">
+                <div className="w-100 pl-0 xl:pl-4 lg:pl-4 lg:w-[80%] xl:w-[80%] text-sm">
                     {props.description}
                 </div>
             </div>
@@ -48,14 +48,14 @@ function Projects(props: ProjectsProps) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row">
-                    <div className="w-[20%] text-sm pt-3">
+                <div className="flex flex-col lg:flex-row">
+                    <div className="w-100 lg:w-[20%] text-sm pt-3">
                         <div>Technologies used:</div>
                         <span className={"pl-1"}>{["NextJS", "Redux toolkit", "Ant Design", "C#", ".Net"].map((skill, index) => {
                             return (<div key={index}>{skill}</div>)
                         })}</span>
                     </div>
-                    <div className="w-[80%]">
+                    <div className="w-100 lg:w-[80%]">
                         {productListCentra.map((p: ProductCardProps) => {
                             return (
                                 <ProductCard
@@ -80,14 +80,14 @@ function Projects(props: ProjectsProps) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row">
-                    <div className="w-[20%] text-sm pt-3">
+                <div className="flex flex-col lg:flex-row">
+                    <div className="w-100 lg:w-[20%] text-sm pt-3">
                         <div>Technologies used:</div>
                         <span className={"pl-1"}>{["ReactJS", "Redux", "Material-UI", "C#", ".Net", "Entity Framework", "MS SQL", "Azure DevOps", "Canada Post API", "SendGrid", "Visual Studio"].map((skill, index) => {
                             return (<div key={index}>{skill}</div>)
                         })}</span>
                     </div>
-                    <div className="w-[80%]">
+                    <div className="w-100 lg:w-[80%]">
                         {productList.map((p: ProductCardProps) => {
                             return (
                                 <ProductCard

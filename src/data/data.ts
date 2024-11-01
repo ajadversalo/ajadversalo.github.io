@@ -40,7 +40,7 @@ export const productListGenXys = [
 export const productListCentra = [
     {
         title: 'Scheduling Software for Cross-Departmental Workflow Management',
-        description: 'A scheduling software solution, designed to streamline operations across multiple departments, including manufacturing, installation, and shipping. This tool enables real-time tracking and scheduling of work orders, improving workflow visibility and coordination. The software integrates seamlessly with departmental needs, ensuring that each team stays informed and synchronized, ultimately reducing downtime and enhancing productivity.'
+        description: 'A calendar based scheduling software solution, designed to streamline operations across multiple departments, including manufacturing, installation, and shipping. This tool enables real-time tracking and scheduling of work orders, improving workflow visibility and coordination. The software integrates seamlessly with departmental needs, ensuring that each team stays informed and synchronized, ultimately reducing downtime and enhancing productivity.'
     },
     {
         title: 'Manufacturing Tracking Software',
