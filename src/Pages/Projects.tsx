@@ -51,9 +51,9 @@ function Projects(props: ProjectsProps) {
                 <div className="flex flex-col lg:flex-row">
                     <div className="w-100 lg:w-[20%] text-sm pt-3">
                         <div>Technologies used:</div>
-                        <span className={"pl-1"}>{["NextJS", "Redux toolkit", "Ant Design", "C#", ".Net"].map((skill, index) => {
+                        <div className={"pl-1"}>{["NextJS", "Redux toolkit", "Ant Design", "C#", ".Net"].map((skill, index) => {
                             return (<div key={index}>{skill}</div>)
-                        })}</span>
+                        })}</div>
                     </div>
                     <div className="w-100 lg:w-[80%]">
                         {productListCentra.map((p: ProductCardProps) => {

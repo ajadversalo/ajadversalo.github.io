@@ -90,7 +90,7 @@ function App() {
                     <AnchorLink href={"#projects"} label={"Projects"} selected={selected === "Projects"} setSelected={setSelected}>
                         <div className="flex flex-col lg:flex-row">
                             <FontAwesomeIcon icon={faDiagramProject} className="lg:mt-1" />
-                            <span className="pl-2 text-sm lg:text-lg">Projects</span>
+                            <span className="pl-2 text-sm lg:text-lg">Application Portfolio</span>
                         </div>
                     </AnchorLink>
                     <AnchorLink href={"#contact"} label={"Contact"} selected={selected === "Contact"} setSelected={setSelected}>

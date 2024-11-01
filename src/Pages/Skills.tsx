@@ -12,11 +12,11 @@ function Skills() {
     let skills: SkillsProps[] = [
         {
             category: 'Front-End', 
-            items: 'HTML, CSS, JavaScript ES6, TypeScript, ReactJS, Redux, MaterialUI'
+            items: 'HTML, CSS, JavaScript, TypeScript, ReactJs, NextJs, Redux, MaterialUI, Tailwind, Ant Design'
         },
         {
             category: 'Back-End', 
-            items: 'C#, .Net, Entity Framework'
+            items: 'C#, .Net, NodeJs, Entity Framework'
         },
         {
             category: 'Database', 
@@ -31,8 +31,12 @@ function Skills() {
             items: 'Git'
         },
         {
+            category: 'DevOps',
+            items: 'Apache, IIS'
+        },
+        {
             category: 'Others', 
-            items: 'Selenium, i18next, SendGrid'
+            items: 'Selenium, i18next, SendGrid, Playwright'
         },
     ]
     
