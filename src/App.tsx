@@ -20,7 +20,6 @@ import Collapse from '@mui/material/Collapse';
 import Contact from './Pages//Contact';
 import Resume from './Pages/Resume';
 import Skills from './Pages/Skills';
-import SkillsCompact from './Pages/SkillsCompact';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
 
@@ -169,7 +168,7 @@ function App() {
                         }
                         <Collapse in={showTechnicalSkills}>
                             <div className="">
-                                <SkillsCompact />
+                                <Skills />
                             </div>
                         </Collapse>
                     </div>
@@ -194,14 +193,7 @@ function App() {
                     <About content={aboutContent} />
                 </>
             }
-
-            {false &&
-                <>
-                    <div id="skills" className=""></div>
-                    <Skills />
-                </>
-            }
-
+      
             <div id="projects" className=""></div>
             <Projects
                 productList={productListGenXys}

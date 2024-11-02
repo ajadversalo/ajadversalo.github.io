@@ -1,33 +1,30 @@
 import React from 'react';
 
-import PageContainer from '../Pages/PageContainer';
-
 type SkillsProps = {
     category: string,
     items: string
 }
 
-
 function Skills() {
     let skills: SkillsProps[] = [
         {
-            category: 'Front-End', 
+            category: 'Front-End',
             items: 'HTML, CSS, JavaScript, TypeScript, ReactJs, NextJs, Redux, MaterialUI, Tailwind, Ant Design'
         },
         {
-            category: 'Back-End', 
+            category: 'Back-End',
             items: 'C#, .Net, NodeJs, Entity Framework'
         },
         {
-            category: 'Database', 
+            category: 'Database',
             items: 'SQL Server'
         },
         {
-            category: 'Cloud Services', 
+            category: 'Cloud Services',
             items: 'Azure DevOps, AWS'
         },
         {
-            category: 'Version Control', 
+            category: 'Version Control',
             items: 'Git'
         },
         {
@@ -35,15 +32,15 @@ function Skills() {
             items: 'Apache, IIS'
         },
         {
-            category: 'Others', 
+            category: 'Others',
             items: 'Selenium, i18next, SendGrid, Playwright'
         },
     ]
-    
+
     const Skill = (props: any) => {
         return (
-            <div className={"flex flex-col sm:flex-row mb-2"}>
-                <div className={"w-[15rem]"}>
+            <div className={"flex mb-1 text-sm"}>
+                <div className={"w-[11rem] sm:w-[9rem]"}>
                     {props.category}
                 </div>
                 <div className={`w-100 ml-4 lg:ml-0 w-full`}>
@@ -61,7 +58,10 @@ function Skills() {
     }
 
     return (
-        <PageContainer title="Skills" fillScreen={true}>
+        <div className="">
+            <div className="text-lg mb-2 text-[#FFDD44]">
+                Technical Skills
+            </div>
             {skills.map((p: any) => {
                 return (
                     <Skill
@@ -70,7 +70,7 @@ function Skills() {
                         items={p.items}
                     />)
             })}
-        </PageContainer>                
+        </div>
     );
 }
 
