@@ -159,9 +159,11 @@ function App() {
                                 </Button>
                             </div>
                         }
-                        <div className="mt-8">
-                            <SkillsNew />
-                        </div>
+                        {false &&
+                            <div className="mt-8">
+                                <SkillsNew />
+                            </div>
+                        }
                     </div>
                 </div>
                 {false &&
