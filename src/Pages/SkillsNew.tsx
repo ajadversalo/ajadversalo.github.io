@@ -39,8 +39,8 @@ function SkillsNew() {
 
     const Skill = (props: any) => {
         return (
-            <div className={"flex flex-col sm:flex-row mb-1 text-xs"}>
-                <div className={"w-[11rem]"}>
+            <div className={"flex mb-1 text-xs"}>
+                <div className={"w-[11rem] sm:w-[9rem]"}>
                     {props.category}
                 </div>
                 <div className={`w-100 ml-4 lg:ml-0 w-full`}>
