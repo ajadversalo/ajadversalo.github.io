@@ -5,7 +5,7 @@ type SkillsProps = {
     items: string
 }
 
-function SkillsNew() {
+function SkillsCompact() {
     let skills: SkillsProps[] = [
         {
             category: 'Front-End',
@@ -74,4 +74,4 @@ function SkillsNew() {
     );
 }
 
-export default SkillsNew;
+export default SkillsCompact;
