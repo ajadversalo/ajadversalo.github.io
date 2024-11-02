@@ -165,7 +165,7 @@ function App() {
                         <Divider className="bg-white" />
                         <Collapse in={!showTechnicalSkills}>
                         <div className={"text-2xl sm:text-3xl"}>
-                            Experienced full-stack developer with over 5 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
+                            Experienced full-stack developer with over 6 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
                         </div>
                         </Collapse>
                         {!isAtTop &&
