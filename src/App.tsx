@@ -107,7 +107,7 @@ function App() {
                                                       
                     <div className="flex flex-col lg:flex-row">
                         <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
-                            {<i className="fa-brands fa-linkedin text-white mt-[-6px]"/>}
+                            {<i className="fa-brands fa-linkedin text-white mt-[-4px]"/>}
                         </IconButton>
                     </div>
                                       
