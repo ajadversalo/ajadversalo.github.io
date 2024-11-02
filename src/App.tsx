@@ -18,6 +18,7 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import Contact from './Pages//Contact';
 import Resume from './Pages/Resume';
 import Skills from './Pages/Skills';
+import SkillsNew from './Pages/SkillsNew';
 import Projects from './Pages/Projects';
 import About from './Pages/About';
 
@@ -81,12 +82,14 @@ function App() {
         return (
             <div className="flex justify-center text-white fixed bottom-0 lg:sticky lg:top-0 bg-gray-900 pt-3 pb-3 z-[50] w-full">
                 <div className="text-lg flex flex-row justify-between border-box w-full sm:w-full lg:w-[60%] pl-4 pr-4">
-                    <AnchorLink href={"#skills"} label={"Skills"} selected={selected === "Skills"} setSelected={setSelected}>
-                        <div className="flex flex-col lg:flex-row">
-                            <FontAwesomeIcon icon={faListCheck} className="lg:mt-1" />
-                            <span className="pl-2 text-sm lg:text-lg">Skills</span>
-                        </div>
-                    </AnchorLink>
+                    {false &&
+                        <AnchorLink href={"#skills"} label={"Skills"} selected={selected === "Skills"} setSelected={setSelected}>
+                            <div className="flex flex-col lg:flex-row">
+                                <FontAwesomeIcon icon={faListCheck} className="lg:mt-1" />
+                                <span className="pl-2 text-sm lg:text-lg">Skills</span>
+                            </div>
+                        </AnchorLink>
+                    }
                     <AnchorLink href={"#projects"} label={"Projects"} selected={selected === "Projects"} setSelected={setSelected}>
                         <div className="flex flex-col lg:flex-row">
                             <FontAwesomeIcon icon={faDiagramProject} className="lg:mt-1" />
@@ -144,7 +147,7 @@ function App() {
                         </div>
                         {!isAtTop &&
                             <a href={"#top"}>
-                                <FontAwesomeIcon icon={faCircleChevronUp} size="2xl" className="fixed bottom-[90px] right-5  rounded-full h-[3rem] w-[3rem] opacity-30 hover:cursor-pointer" />
+                                <FontAwesomeIcon icon={faCircleChevronUp} size="2xl" className="fixed bottom-[90px] right-5 rounded-full h-[3rem] w-[3rem] opacity-30 hover:cursor-pointer" />
                             </a>
                         }
                         {false &&
@@ -156,6 +159,9 @@ function App() {
                                 </Button>
                             </div>
                         }
+                        <div className="mt-16">
+                            <SkillsNew />
+                        </div>
                     </div>
                 </div>
                 {false &&
