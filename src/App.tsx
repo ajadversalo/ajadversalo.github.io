@@ -15,6 +15,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
+import Collapse from '@mui/material/Collapse';
+
 import Contact from './Pages//Contact';
 import Resume from './Pages/Resume';
 import Skills from './Pages/Skills';
@@ -37,6 +39,7 @@ function App() {
     const [showResume, setShowResume] = useState(false);
     const [selected, setSelected] = useState(null);
     const [isAtTop, setIsAtTop] = useState(false);
+    const [showTechnicalSkills, setShowTechnicalSkills] = useState(false);
 
     useEffect(() => {
         document.title = 'Adversalo';
@@ -142,9 +145,11 @@ function App() {
                             AJ Adversalo
                         </div>
                         <Divider className="bg-white" />
+                        <Collapse in={!showTechnicalSkills}>
                         <div className={"text-3xl"}>
                             Experienced full-stack developer with over 5 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
                         </div>
+                        </Collapse>
                         {!isAtTop &&
                             <a href={"#top"}>
                                 <FontAwesomeIcon icon={faCircleChevronUp} size="2xl" className="fixed bottom-[90px] right-5 rounded-full h-[3rem] w-[3rem] opacity-30 hover:cursor-pointer" />
@@ -159,11 +164,14 @@ function App() {
                                 </Button>
                             </div>
                         }
-                        {false &&
-                            <div className="mt-8">
+                        {!showTechnicalSkills &&
+                            <div className="mt-8 hover:cursor-pointer hover:underline" onClick={() => setShowTechnicalSkills(true)}>View My Techical Skills</div>
+                        }
+                        <Collapse in={showTechnicalSkills}>
+                            <div className="">
                                 <SkillsNew />
                             </div>
-                        }
+                        </Collapse>
                     </div>
                 </div>
                 {false &&

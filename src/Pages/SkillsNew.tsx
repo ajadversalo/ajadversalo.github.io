@@ -39,7 +39,7 @@ function SkillsNew() {
 
     const Skill = (props: any) => {
         return (
-            <div className={"flex mb-1 text-xs"}>
+            <div className={"flex mb-1 text-sm"}>
                 <div className={"w-[11rem] sm:w-[9rem]"}>
                     {props.category}
                 </div>
@@ -60,7 +60,7 @@ function SkillsNew() {
     return (
         <div className="">
             <div className="text-lg mb-2">
-                Skills
+                Technical Skills
             </div>
             {skills.map((p: any) => {
                 return (
