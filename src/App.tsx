@@ -139,7 +139,7 @@ function App() {
         <div className="bg-sky-900 relative" id="top">
             <NavBar />
             <div className="h-screen">
-                <div className="h-full flex items-center justify-center pl-2 pr-2">
+                <div className="h-full flex items-center justify-center pl-2 pr-2 mt-[-1rem]">
                     <div className={"w-[50rem] text-white p-2 mt-[-3rem]"}>
                         <div className={"text-6xl"}>
                             AJ Adversalo
