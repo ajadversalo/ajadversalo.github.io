@@ -37,7 +37,7 @@ function App() {
     const [height, setHeight] = useState(window.innerHeight);
     const [showResume, setShowResume] = useState(false);
     const [selected, setSelected] = useState(null);
-    const [isAtTop, setIsAtTop] = useState(false);
+    const [isAtTop, setIsAtTop] = useState(true);
     const [showTechnicalSkills, setShowTechnicalSkills] = useState(false);
 
     useEffect(() => {
