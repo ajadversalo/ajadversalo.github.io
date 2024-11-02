@@ -104,6 +104,13 @@ function App() {
                             <span className="pl-2 text-sm lg:text-lg">Contact</span>
                         </div>
                     </AnchorLink>
+                                                      
+                    <div className="flex flex-col lg:flex-row">
+                        <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
+                            {<i className="fa-brands fa-linkedin text-white mt-[-6px]"/>}
+                        </IconButton>
+                    </div>
+                                      
                     {false &&
                         <AnchorLink
                             label={"My Resume"}
