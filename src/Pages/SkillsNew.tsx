@@ -58,7 +58,7 @@ function SkillsNew() {
     }
 
     return (
-        <div>
+        <div className="">
             <div className="text-lg mb-2">
                 Skills
             </div>
