@@ -104,13 +104,7 @@ function App() {
                             <span className="pl-2 text-sm lg:text-lg">Contact</span>
                         </div>
                     </AnchorLink>
-                                                      
-                    <div className="flex flex-col lg:flex-row">
-                        <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
-                            {<i className="fa-brands fa-linkedin text-white mt-[-4px]"/>}
-                        </IconButton>
-                    </div>
-                                      
+                    
                     {false &&
                         <AnchorLink
                             label={"My Resume"}
@@ -125,12 +119,23 @@ function App() {
                         </AnchorLink>
                     }
                     {false && <AnchorLink href={"#about"} label={"About"} />}
-
                 </div>
             </div>
         );
     }
-    
+
+    const SubNavBar = () => {
+        return (
+            <div className="flex justify-center text-white fixed lg:bottom-0 pt-3 pb-3 z-[50] w-full mt-2 lg:mt-0">
+                <div className="text-lg flex flex-row justify-between border-box w-full lg:w-[50%] pl-4 pr-4">
+                    <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
+                        <i className="fa-brands fa-linkedin text-white"></i>
+                    </IconButton>
+                </div>
+            </div>
+        );
+    }
+
     window.addEventListener('scroll', () => {
         function isScrolledToTop() {
             return window?.pageYOffset === 0;
@@ -146,6 +151,7 @@ function App() {
     return (
         <div className="bg-sky-900 relative" id="top">
             <NavBar />
+            <SubNavBar />
             <div className="h-screen">
                 <div className="h-full flex items-center justify-center pl-2 pr-2 mt-[-1rem]">
                     <div className={"w-[50rem] text-white p-2 mt-[-3rem] h-[25rem]"}>
