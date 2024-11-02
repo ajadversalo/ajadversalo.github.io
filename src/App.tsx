@@ -141,12 +141,12 @@ function App() {
             <div className="h-screen">
                 <div className="h-full flex items-center justify-center pl-2 pr-2 mt-[-1rem]">
                     <div className={"w-[50rem] text-white p-2 mt-[-3rem] h-[25rem]"}>
-                        <div className={"text-6xl"}>
+                        <div className={"text-5xl sm:text-6xl"}>
                             AJ Adversalo
                         </div>
                         <Divider className="bg-white" />
                         <Collapse in={!showTechnicalSkills}>
-                        <div className={"text-3xl"}>
+                        <div className={"text-2xl sm:text-3xl"}>
                             Experienced full-stack developer with over 5 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
                         </div>
                         </Collapse>
