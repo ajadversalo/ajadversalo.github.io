@@ -59,7 +59,7 @@ function SkillsNew() {
 
     return (
         <div className="">
-            <div className="text-lg mb-2">
+            <div className="text-lg mb-2 text-[#FFDD44]">
                 Technical Skills
             </div>
             {skills.map((p: any) => {

@@ -165,7 +165,7 @@ function App() {
                             </div>
                         }
                         {!showTechnicalSkills &&
-                            <div className="mt-8 hover:cursor-pointer hover:underline" onClick={() => setShowTechnicalSkills(true)}>View My Techical Skills</div>
+                            <div className="mt-8 hover:cursor-pointer hover:underline text-[#FFDD44]" onClick={() => setShowTechnicalSkills(true)}>View My Techical Skills <i className="fa-solid fa-chevron-right"></i></div>
                         }
                         <Collapse in={showTechnicalSkills}>
                             <div className="">
