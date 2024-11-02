@@ -131,6 +131,10 @@ function App() {
                     <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
                         <i className="fa-brands fa-linkedin text-white"></i>
                     </IconButton>
+                    <IconButton onClick={() => setShowResume(true)}>
+                        <i className="fa-solid fa-file text-white" />
+                        <span className="text-white pl-2 text-[16px]">My Resume</span>
+                    </IconButton>
                 </div>
             </div>
         );
@@ -225,6 +229,7 @@ function App() {
                 width={1000}
                 footer={null}
                 onCancel={() => setShowResume(false)}
+                style={{marginTop: "-5rem"}}
             >
                 <Resume />
             </Modal>
