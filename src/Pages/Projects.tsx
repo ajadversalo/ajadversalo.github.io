@@ -1,11 +1,13 @@
 import React from 'react';
 import PageContainer from '../Pages/PageContainer';
 
-import { Divider } from "antd";
+import { Divider, Tooltip } from "antd";
 
 type ProductCardProps = {
     title: string,
-    description: string
+    description: string,
+    isCritical: boolean,
+    isLead: boolean
 }
 
 type ProjectsProps = {
@@ -19,8 +21,26 @@ function Projects(props: ProjectsProps) {
     const ProductCard = (props: ProductCardProps) => {
         return (
             <div className="pt-2 flex flex-col justify-between mt-1">
+                
                 <div className="w-100 text-[#66B2B2] font-semibold">
                     {props.title}
+                    {props.isCritical &&
+                        <Tooltip title="This is a critical application">
+                            <i className="pl-2 fa-solid fa-circle-exclamation text-red-400" />
+                        </Tooltip>
+                    }
+
+                    {props.isLead &&
+                        <Tooltip title="I led this project">
+                            <i className="pl-2 fa-solid fa-certificate text-yellow-300" />
+                        </Tooltip>
+                    }
+
+                    {!props.isLead &&
+                        <Tooltip title="I contributed to this project">
+                            <i className="pl-2 fa-solid fa-puzzle-piece text-blue-300" />
+                        </Tooltip>
+                    }
                 </div>
                 <div className="w-100 text-sm mt-1">
                     {props.description}
@@ -55,6 +75,8 @@ function Projects(props: ProjectsProps) {
                                 key={p.title}
                                 title={p.title}
                                 description={p.description}
+                                isCritical={p.isCritical}
+                                isLead={p.isLead}
                             />)
                     })}
                 </div>
@@ -81,6 +103,8 @@ function Projects(props: ProjectsProps) {
                                 key={p.title}
                                 title={p.title}
                                 description={p.description}
+                                isCritical={p.isCritical}
+                                isLead={p.isLead}
                             />)
                     })}
                 </div>

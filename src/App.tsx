@@ -6,16 +6,13 @@ import { faFileLines, faListCheck, faDiagramProject, faEnvelope, faCircleChevron
 
 import { motion } from "framer-motion";
 
-import Button from '@mui/material/Button';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 //import Tooltip from '@mui/material/Tooltip';
 
 import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 import Collapse from '@mui/material/Collapse';
 
@@ -23,7 +20,6 @@ import Contact from './Pages//Contact';
 import Resume from './Pages/Resume';
 import Skills from './Pages/Skills';
 import Projects from './Pages/Projects';
-import Projects2 from './Pages/Projects2';
 import About from './Pages/About';
 
 import { Divider, Modal, Tooltip } from "antd";
@@ -221,17 +217,12 @@ function App() {
                     </div>
                 </div>
 
-                {false &&
-                    <div>
-                        <div className={""} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
-                            <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
-                                {<LinkedInIcon className={""} />}
-                            </IconButton>
-                            <IconButton onClick={() => window.open('https://github.com/ajadversalo', '_blank')}>
-                                {<GitHubIcon className={""} />}
-                            </IconButton>
-                        </div>
-                    </div>
+                {false &&                    
+                    <div className={""} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
+                        <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
+                            {<LinkedInIcon className={""} />}
+                        </IconButton>
+                    </div>                    
                 }
             </div>
 
@@ -241,6 +232,7 @@ function App() {
                     <About content={aboutContent} />
                 </>
             }
+
             <div className="flex justify-center">
                 <div id="projects" className=""></div>
                 <Projects
@@ -257,6 +249,7 @@ function App() {
                     setOpen={() => { }}
                 />
             </div>
+
             <Modal
                 open={showResume}
                 width={1000}
