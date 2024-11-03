@@ -88,7 +88,7 @@ function Contact(props: ContactProps) {
     }
 
     return (
-        <PageContainer title="Contact" fillScreen={true} className="">
+        <PageContainer title="Contact" fillScreen={true} className="w-full">
             <div className="">
                 {contactSubText}
             </div>
