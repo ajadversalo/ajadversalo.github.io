@@ -26,7 +26,7 @@ function Projects(props: ProjectsProps) {
                     {props.title}
                     {props.isCritical &&
                         <Tooltip title="This is a critical application">
-                            <i className="pl-2 fa-solid fa-circle-exclamation text-red-400" />
+                            <i className="pl-2 fa-solid fa-circle-exclamation text-red-500" />
                         </Tooltip>
                     }
 

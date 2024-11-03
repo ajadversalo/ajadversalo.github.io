@@ -64,6 +64,18 @@ export const productListCentra = [
         isCritical: true,
         isLead: true
     },
+    {
+        title: 'Business Performance Dashboard',
+        description: 'A streamlined platform for managing essential company tasks, allowing employees to fill and submit forms for share purchases, vacation requests, staff onboarding, terminations, and more. This application centralizes administrative workflows, making it easier for teams to handle routine processes efficiently.',
+        isCritical: true,
+        isLead: false
+    },
+    {
+        title: 'Employee Services Portal',
+        description: 'This application is tailored for the window and door manufacturing process. This tool provides comprehensive, real-time insights into each stage of production, ensuring transparency and control from start to finish. Used by the manufacturing team, it captures and displays live production stats, enabling teams to monitor progress, optimize workflow, and address bottlenecks quickly. This solution empowers teams to maintain high standards of efficiency and quality throughout the manufacturing lifecycle.',
+        isCritical: false,
+        isLead: false
+    },
 ];
 
 export const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // eslint-disable-line
