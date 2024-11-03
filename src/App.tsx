@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import Button from '@mui/material/Button';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
-import Tooltip from '@mui/material/Tooltip';
+//import Tooltip from '@mui/material/Tooltip';
 
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -26,7 +26,7 @@ import Projects from './Pages/Projects';
 import Projects2 from './Pages/Projects2';
 import About from './Pages/About';
 
-import { Divider, Modal } from "antd";
+import { Divider, Modal, Tooltip } from "antd";
 
 import {
     aboutContent,
@@ -132,12 +132,20 @@ function App() {
             <div className="flex justify-center text-white fixed xl:bottom-0 pt-3 pb-3 z-[50] w-full mt-4 xl:mt-0">
                 <div className="text-lg flex flex-row justify-between border-box w-full xl:w-[50%] pl-4 pr-4">
                     <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
-                        <i className="fa-brands fa-linkedin text-white"></i>
+                        <Tooltip title="Visit my LinkedIn profile">
+                            <i className="fa-brands fa-linkedin text-white hover:text-blue-200"></i>
+                         </Tooltip>
                     </IconButton>
-                    <IconButton onClick={() => setShowResume(true)}>
-                        <i className="fa-solid fa-file text-white" />
-                        <span className="text-white pl-2 text-[16px]">My Resume</span>
-                    </IconButton>
+                    <span>
+                        <IconButton>
+                            <Tooltip title="Download My Resume">
+                                <i className="fa-solid fa-file-arrow-down text-white hover:text-blue-200" onClick={() => onDownload()} />                        
+                            </Tooltip>
+                        </IconButton>
+                        <Tooltip title="View my Resume">
+                            <span className="text-white pl-2 text-[16px] hover:cursor-pointer hover:text-blue-200" onClick={() => setShowResume(true)}>My Resume</span>
+                        </Tooltip>
+                    </span>
                 </div>
             </div>
         );
