@@ -4,6 +4,8 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileLines, faListCheck, faDiagramProject, faEnvelope, faCircleChevronUp } from '@fortawesome/free-solid-svg-icons';
 
+import { motion } from "framer-motion";
+
 import Button from '@mui/material/Button';
 import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
@@ -160,13 +162,34 @@ function App() {
                 <div className="h-full flex items-center justify-center pl-2 pr-2 mt-[-1rem]">
                     <div className={"w-[50rem] text-white p-2 mt-[-3rem] h-[25rem]"}>
                         <div className={"text-5xl sm:text-6xl"}>
-                            AJ Adversalo
+                            <motion.div
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.5 }}                                
+                            >
+                                AJ Adversalo
+                            </motion.div>
                         </div>
-                        <Divider className="bg-white" />
+                        <motion.div
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, y: 40 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Divider className="bg-white" />
+                        </motion.div>
                         <Collapse in={!showTechnicalSkills}>
-                        <div className={"text-2xl sm:text-3xl"}>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 1 }}
+                            >
+                            <div className={"text-2xl sm:text-3xl"}>
                             Experienced full-stack developer with over 6 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
-                        </div>
+                                </div>
+                            </motion.div>
                         </Collapse>
                         {!isAtTop &&
                             <a href={"#top"}>
