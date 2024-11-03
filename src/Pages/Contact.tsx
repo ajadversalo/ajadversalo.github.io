@@ -88,40 +88,37 @@ function Contact(props: ContactProps) {
     }
 
     return (
-        <div className="w-[100rem]">
-            <PageContainer title="Contact" fillScreen={true} className="">
-                <div className="flex flex-row">                 
-                    {contactSubText}                    
+        <PageContainer title="Contact" fillScreen={true} className="">
+            <div className="">
+                {contactSubText}
+            </div>
+            <div className="w-100 mt-16">
+                <div className={`mt-2 flex flex-col lg:flex-row`}>
+                    <div className="lg:w-[20%] mb-2 lg:mb-0">Your Name</div>
+                    <Input placeholder={""} />
                 </div>
-                <div className="w-100 mt-16">
-                    <div className={`mt-2 flex flex-col lg:flex-row`}>
-                        <div className="lg:w-[20%] mb-2 lg:mb-0">Your Name</div>
-                        <Input placeholder={""} />
-                    </div>
-                    <div className="mt-4 flex  flex-col lg:flex-row">
-                        <div className="lg:w-[20%] mb-2 lg:mb-0">Your Email</div>
-                        <Input placeholder={""} />
-                    </div>
-                    <div className="mt-4 flex  flex-col lg:flex-row">
-                        <div className={`lg:w-[20%] mb-2 lg:mb-0`}>Message</div>
-                        <TextArea
-                            rows={3}
-                            placeholder={""}
-                            name='message'
-                            value={message}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                    <div className={"mt-8 text-right"}>
-                        <Button
-                            onClick={handleButtonSend}
-                            className={""}>
-                            Send
-                        </Button>
-                    </div>
+                <div className="mt-4 flex  flex-col lg:flex-row">
+                    <div className="lg:w-[20%] mb-2 lg:mb-0">Your Email</div>
+                    <Input placeholder={""} />
                 </div>
-            </PageContainer>
-
+                <div className="mt-4 flex  flex-col lg:flex-row">
+                    <div className={`lg:w-[20%] mb-2 lg:mb-0`}>Message</div>
+                    <TextArea
+                        rows={3}
+                        placeholder={""}
+                        name='message'
+                        value={message}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div className={"mt-8 text-right"}>
+                    <Button
+                        onClick={handleButtonSend}
+                        className={""}>
+                        Send
+                    </Button>
+                </div>
+            </div>
             {/* Hidden. Required by emailjs, values are mapped to state. */}
             <form ref={formRef} onSubmit={handleSendEmail} style={{ visibility: 'hidden' }}>
                 <div><input className="text-white" type='text' name='from_name' onChange={() => { }} value={fromName} /></div>
@@ -129,7 +126,7 @@ function Contact(props: ContactProps) {
                 <div><input type='text' name='message' onChange={() => { }} value={message} /></div>
                 <div><input id='button_send' type='submit' value='Send' /></div>
             </form>
-        </div>
+        </PageContainer>
     );
 }
 

@@ -85,26 +85,26 @@ function App() {
 
     const NavBar = () => {
         return (
-            <div className="flex justify-center text-white fixed bottom-0 lg:sticky lg:top-0 bg-gray-900 pt-3 pb-3 z-[50] w-full">
-                <div className="text-lg flex flex-row justify-between border-box w-full lg:w-[30%] pl-4 pr-4">
+            <div className="flex justify-center text-white fixed bottom-0 xl:sticky xl:top-0 bg-gray-900 pt-3 pb-3 z-[50] w-full">
+                <div className="text-xl flex flex-row justify-between border-box w-full xl:w-[40%] pl-4 pr-4">
                     {false &&
                         <AnchorLink href={"#skills"} label={"Skills"} selected={selected === "Skills"} setSelected={setSelected}>
-                            <div className="flex flex-col lg:flex-row">
-                                <FontAwesomeIcon icon={faListCheck} className="lg:mt-1" />
-                                <span className="pl-2 text-sm lg:text-lg">Skills</span>
+                            <div className="flex flex-col xl:flex-row">
+                                <FontAwesomeIcon icon={faListCheck} className="xl:mt-1" />
+                                <span className="pl-2 text-sm xl:text-lg">Skills</span>
                             </div>
                         </AnchorLink>
                     }
                     <AnchorLink href={"#projects"} label={"Projects"} selected={selected === "Projects"} setSelected={setSelected}>
-                        <div className="flex flex-col lg:flex-row">
-                            <FontAwesomeIcon icon={faDiagramProject} className="lg:mt-1" />
-                            <span className="pl-2 text-sm lg:text-lg">Application Portfolio</span>
+                        <div className="flex flex-col xl:flex-row">
+                            <FontAwesomeIcon icon={faDiagramProject} className="xl:mt-1" />
+                            <span className="pl-2 text-sm xl:text-lg">Application Portfolio</span>
                         </div>
                     </AnchorLink>
                     <AnchorLink href={"#contact"} label={"Contact"} selected={selected === "Contact"} setSelected={setSelected}>
-                        <div className="flex flex-col lg:flex-row">
-                            <FontAwesomeIcon icon={faEnvelope} className="lg:mt-1" />
-                            <span className="pl-2 text-sm lg:text-lg">Contact</span>
+                        <div className="flex flex-col xl:flex-row">
+                            <FontAwesomeIcon icon={faEnvelope} className="xl:mt-1" />
+                            <span className="pl-2 text-sm xl:text-lg">Contact</span>
                         </div>
                     </AnchorLink>
                     
@@ -115,9 +115,9 @@ function App() {
                             setSelected={setSelected}
                             onClick={() => setShowResume(true)}
                         >
-                            <div className="flex flex-col lg:flex-row">
-                                <FontAwesomeIcon icon={faFileLines} className="lg:mt-1" />
-                                <span className="pl-2 text-sm lg:text-lg">My Resume</span>
+                            <div className="flex flex-col xl:flex-row">
+                                <FontAwesomeIcon icon={faFileLines} className="xl:mt-1" />
+                                <span className="pl-2 text-sm xl:text-lg">My Resume</span>
                             </div>
                         </AnchorLink>
                     }
@@ -129,8 +129,8 @@ function App() {
 
     const SubNavBar = () => {
         return (
-            <div className="flex justify-center text-white fixed lg:bottom-0 pt-3 pb-3 z-[50] w-full mt-4 lg:mt-0">
-                <div className="text-lg flex flex-row justify-between border-box w-full lg:w-[50%] pl-4 pr-4">
+            <div className="flex justify-center text-white fixed lg:bottom-0 pt-3 pb-3 z-[50] w-full mt-4 xl:mt-0">
+                <div className="text-lg flex flex-row justify-between border-box w-full xl:w-[50%] pl-4 pr-4">
                     <IconButton onClick={() => window.open('https://www.linkedin.com/in/ajadversalo', '_blank')}>
                         <i className="fa-brands fa-linkedin text-white"></i>
                     </IconButton>
@@ -212,6 +212,7 @@ function App() {
                         </Collapse>
                     </div>
                 </div>
+
                 {false &&
                     <div>
                         <div className={""} style={height < 550 ? { position: 'relative', paddingTop: '2rem' } : { position: 'absolute', bottom: 15 }}>
