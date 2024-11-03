@@ -23,6 +23,7 @@ import Contact from './Pages//Contact';
 import Resume from './Pages/Resume';
 import Skills from './Pages/Skills';
 import Projects from './Pages/Projects';
+import Projects2 from './Pages/Projects2';
 import About from './Pages/About';
 
 import { Divider, Modal } from "antd";
@@ -157,7 +158,11 @@ function App() {
     return (
         <div className="bg-sky-900 relative" id="top">
             <NavBar />
-            {isAtTop && <SubNavBar />}
+
+            {isAtTop &&
+                <SubNavBar />
+            }
+
             <div className="h-screen">
                 <div className="h-full flex items-center justify-center pl-2 pr-2 mt-[-1rem]">
                     <div className={"w-[50rem] text-white p-2 mt-[-3rem] h-[25rem]"}>
@@ -187,8 +192,8 @@ function App() {
                                 transition={{ duration: 1 }}
                             >
                             <div className={"text-2xl sm:text-3xl"}>
-                            Experienced full-stack developer with over 6 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
-                                </div>
+                                Experienced full-stack developer with over 6 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
+                            </div>
                             </motion.div>
                         </Collapse>
                         {!isAtTop &&
@@ -196,15 +201,7 @@ function App() {
                                 <FontAwesomeIcon icon={faCircleChevronUp} size="2xl" className="fixed bottom-[90px] right-5 rounded-full h-[3rem] w-[3rem] opacity-30 hover:cursor-pointer" />
                             </a>
                         }
-                        {false &&
-                            <div style={{ paddingTop: '2rem' }}>
-                                <Button className={""}
-                                    onClick={() => { }}
-                                >
-                                    My Resume
-                                </Button>
-                            </div>
-                        }
+
                         {!showTechnicalSkills &&
                             <div className="mt-8 hover:cursor-pointer hover:underline text-[#FFDD44]" onClick={() => setShowTechnicalSkills(true)}>View My Techical Skills <i className="fa-solid fa-chevron-right"></i></div>
                         }
@@ -235,18 +232,22 @@ function App() {
                     <About content={aboutContent} />
                 </>
             }
-      
-            <div id="projects" className=""></div>
-            <Projects
-                productList={productListGenXys}
-                productListCentra={productListCentra}
-            />
-            <div id="contact" className=""></div>
-            <Contact
-                setOpenPopup={setOpenPopup}
-                setPopupMsg={setPopupMsg}
-                setOpen={() => { }}
-            />
+            <div className="flex justify-center">
+                <div id="projects" className=""></div>
+                <Projects
+                    productList={productListGenXys}
+                    productListCentra={productListCentra}
+                />
+            </div>
+
+            <div className="flex justify-center">
+                <div id="contact" className=""></div>
+                <Contact
+                    setOpenPopup={setOpenPopup}
+                    setPopupMsg={setPopupMsg}
+                    setOpen={() => { }}
+                />
+            </div>
             <Modal
                 open={showResume}
                 width={1000}

@@ -14,7 +14,7 @@ type ContactProps = {
     setOpenPopup: Function
 }
 
-function Contact(props: ContactProps) {
+function Projects2(props: ContactProps) {
     const { setOpen, setPopupMsg, setOpenPopup } = props;
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -90,8 +90,8 @@ function Contact(props: ContactProps) {
     return (
         <div className="w-[100rem]">
             <PageContainer title="Contact" fillScreen={true} className="">
-                <div className="flex flex-row">                 
-                    {contactSubText}                    
+                <div className="flex flex-row">
+                    {contactSubText}
                 </div>
                 <div className="w-100 mt-16">
                     <div className={`mt-2 flex flex-col lg:flex-row`}>
@@ -133,4 +133,4 @@ function Contact(props: ContactProps) {
     );
 }
 
-export default Contact;
+export default Projects2;
