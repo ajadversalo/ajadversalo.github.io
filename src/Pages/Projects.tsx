@@ -7,7 +7,8 @@ type ProductCardProps = {
     title: string,
     description: string,
     isCritical: boolean,
-    isLead: boolean
+    isLead: boolean,
+    index: number
 }
 
 type ProjectsProps = {
@@ -20,13 +21,13 @@ function Projects(props: ProjectsProps) {
 
     const ProductCard = (props: ProductCardProps) => {
         return (
-            <div className="pt-2 flex flex-col justify-between mt-1">
-                
-                <div className="w-100 text-[#66B2B2] font-semibold">
+            <div className="pt-2 flex flex-col justify-between mt-1">                
+                <div className="w-100 text-indigo-100 font-semibold">
+                    <span className="pr-1">{props.index + 1}.</span>
                     {props.title}
                     {props.isCritical &&
                         <Tooltip title="This is a critical application">
-                            <i className="pl-2 fa-solid fa-circle-exclamation text-red-500" />
+                            <i className="fa-solid fa-shield pl-2 text-green-500"></i>
                         </Tooltip>
                     }
 
@@ -42,7 +43,7 @@ function Projects(props: ProjectsProps) {
                         </Tooltip>
                     }
                 </div>
-                <div className="w-100 text-sm mt-1">
+                <div className="w-100 text-sm mt-1 text-gray-300">
                     {props.description}
                 </div>
             </div>
@@ -69,7 +70,7 @@ function Projects(props: ProjectsProps) {
             </div>
             <div className="mt-6">
                 <div className="">
-                    {productListCentra.map((p: ProductCardProps) => {
+                    {productListCentra.map((p: ProductCardProps, index: number) => {
                         return (
                             <ProductCard
                                 key={p.title}
@@ -77,6 +78,7 @@ function Projects(props: ProjectsProps) {
                                 description={p.description}
                                 isCritical={p.isCritical}
                                 isLead={p.isLead}
+                                index={index}
                             />)
                     })}
                 </div>
@@ -97,7 +99,7 @@ function Projects(props: ProjectsProps) {
             </div>
             <div className="flex flex-col 2xl:flex-row mt-6">
                 <div className="w-100">
-                    {productList.map((p: ProductCardProps) => {
+                    {productList.map((p: ProductCardProps, index: number) => {
                         return (
                             <ProductCard
                                 key={p.title}
@@ -105,6 +107,7 @@ function Projects(props: ProjectsProps) {
                                 description={p.description}
                                 isCritical={p.isCritical}
                                 isLead={p.isLead}
+                                index={index}
                             />)
                     })}
                 </div>
