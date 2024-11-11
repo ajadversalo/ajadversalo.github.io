@@ -71,7 +71,7 @@ function App() {
         return (
             <a
                 href={href}
-                className={`border-b-2 border-transparent hover:cursor-pointer hover:border-white ${selected ? "border-b-2 border-white" : ""} pl-2 pr-2 transition transform duration-500 ease-in-out`}
+                className={`border-b-2 border-transparent hover:cursor-pointer hover:border-white ${selected ? "border-b-2 border-white" : ""} pl-2 pr-2 transition transform duration-500 ease-in-out flex items-center`}
                 onClick={() => { setSelected(label); onClick?.() }}
             >
                 {props.children}
@@ -94,7 +94,7 @@ function App() {
                     <AnchorLink href={"#projects"} label={"Projects"} selected={selected === "Projects"} setSelected={setSelected}>
                         <div className="flex flex-col xl:flex-row">
                             <FontAwesomeIcon icon={faDiagramProject} className="xl:mt-1" />
-                            <span className="pl-2 text-sm xl:text-lg">Application Portfolio</span>
+                            <span className="pl-2 text-sm xl:text-lg">Portfolio</span>
                         </div>
                     </AnchorLink>
                     <AnchorLink href={"#contact"} label={"Contact"} selected={selected === "Contact"} setSelected={setSelected}>
@@ -102,21 +102,19 @@ function App() {
                             <FontAwesomeIcon icon={faEnvelope} className="xl:mt-1" />
                             <span className="pl-2 text-sm xl:text-lg">Contact</span>
                         </div>
-                    </AnchorLink>
-                    
-                    {false &&
-                        <AnchorLink
-                            label={"My Resume"}
-                            selected={selected === "My Resume"}
-                            setSelected={setSelected}
-                            onClick={() => setShowResume(true)}
-                        >
-                            <div className="flex flex-col xl:flex-row">
-                                <FontAwesomeIcon icon={faFileLines} className="xl:mt-1" />
-                                <span className="pl-2 text-sm xl:text-lg">My Resume</span>
+                    </AnchorLink>                    
+                    <div className="flex flex-col xl:flex-row">                        
+                        <Tooltip title="Download My Resume">
+                            <div className="flex justify-center">
+                                <i className="fa-solid fa-file-arrow-down text-white hover:text-blue-200 xl:mt-1" onClick={() => onDownload()} />
                             </div>
-                        </AnchorLink>
-                    }
+                        </Tooltip>                        
+                        <Tooltip title="View my Resume">
+                            <span className="text-white pl-0 xl:pl-2 text-sm xl:text-lg hover:cursor-pointer hover:text-blue-200" onClick={() => setShowResume(true)}>
+                                My Resume
+                            </span>
+                        </Tooltip>
+                    </div>                    
                     {false && <AnchorLink href={"#about"} label={"About"} />}
                 </div>
             </div>
@@ -132,16 +130,18 @@ function App() {
                             <i className="fa-brands fa-linkedin text-white hover:text-blue-200"></i>
                          </Tooltip>
                     </IconButton>
-                    <span>
-                        <IconButton>
-                            <Tooltip title="Download My Resume">
-                                <i className="fa-solid fa-file-arrow-down text-white hover:text-blue-200" onClick={() => onDownload()} />                        
+                    {false &&
+                        <span>
+                            <IconButton>
+                                <Tooltip title="Download My Resume">
+                                    <i className="fa-solid fa-file-arrow-down text-white hover:text-blue-200" onClick={() => onDownload()} />
+                                </Tooltip>
+                            </IconButton>
+                            <Tooltip title="View my Resume">
+                                <span className="text-white pl-2 text-[16px] hover:cursor-pointer hover:text-blue-200" onClick={() => setShowResume(true)}>My Resume</span>
                             </Tooltip>
-                        </IconButton>
-                        <Tooltip title="View my Resume">
-                            <span className="text-white pl-2 text-[16px] hover:cursor-pointer hover:text-blue-200" onClick={() => setShowResume(true)}>My Resume</span>
-                        </Tooltip>
-                    </span>
+                        </span>
+                    }
                 </div>
             </div>
         );
