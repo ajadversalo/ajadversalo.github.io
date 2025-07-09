@@ -196,7 +196,7 @@ function App() {
                                 transition={{ duration: 1 }}
                             >
                             <div className={"text-2xl sm:text-3xl"}>
-                                Experienced full-stack developer with over 6 years of experience in building robust, user-centric applications. Dedicated to writing clean, reusable code to deliver efficient and scalable solutions.
+                              Results-oriented Full Stack Developer with a strong technical foundation and a passion for solving real-world problems through software. Experienced in building and maintaining end-to-end applications, contributing across the stack, and collaborating closely with cross-functional teams. Known for adaptability, ownership, and continuous growth, with a proven track record of delivering value in both technical and team leadership capacities. 
                             </div>
                             </motion.div>
                         </Collapse>
